@@ -16,10 +16,8 @@ class Controller {
 
     Start() {
         this.State = StateEnum.INTRO;
-        //this.ShowHtml(introHtml);
-        //$("#btnNext").click(btnNextClick);
-        $("#divMain").load("intro.html");
-        
+        this.ShowHtml(introHtml);
+        $("#btnNext").click(btnNextClick);
     }
 
     ShowHtml(html) {
