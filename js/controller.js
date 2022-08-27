@@ -27,8 +27,7 @@ class Controller {
     NextFrame() {
         switch (this.State) {
             case StateEnum.INTRO:
-                //this.ShowFile("./Frames/UserName.html");
-                alert("NextFrame");
+                this.ShowHtml(userNameHtml);
                 this.State = StateEnum.USERNAME;
                 break;
             // case StateEnum.USERNAME:
