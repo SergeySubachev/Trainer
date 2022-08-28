@@ -2,9 +2,10 @@
     INTRO: 0,
     USERNAME: 1,
     ABOUTSTATION: 2,
-    SELECTEXERCISE: 3,
-    EXERCISE: 4,
-    RESULT: 5
+    SELECTFUEL: 3,
+    SELECTEXERCISE: 4,
+    EXERCISE: 5,
+    RESULT: 6
 }
 
 class Controller {
@@ -38,6 +39,11 @@ class Controller {
                 this.ShowHtml(aboutStationHtml);
                 $("#btnNext").click(btnNextClick);
                 this.State = StateEnum.ABOUTSTATION;
+                break;
+            case StateEnum.ABOUTSTATION:
+                this.ShowHtml(selectFuelHtml);
+                $("#btnNext").click(btnNextClick);
+                this.State = StateEnum.SELECTFUEL;
                 break;
             // case StateEnum.SELECTEXERCISE:
             //     let options = $("input");
