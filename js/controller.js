@@ -1,9 +1,10 @@
 ﻿let StateEnum = {
     INTRO: 0,
     USERNAME: 1,
-    SELECTEXERCISE: 2,
-    EXERCISE: 3,
-    RESULT: 4
+    ABOUTSTATION: 2,
+    SELECTEXERCISE: 3,
+    EXERCISE: 4,
+    RESULT: 5
 }
 
 class Controller {
@@ -28,15 +29,16 @@ class Controller {
         switch (this.State) {
             case StateEnum.INTRO:
                 this.ShowHtml(userNameHtml);
+                $("#btnNext").click(btnNextClick);
                 this.State = StateEnum.USERNAME;
                 break;
-            // case StateEnum.USERNAME:
-            //     this.UserName = $("#tbUserName")[0].value;
-            //     if (this.UserName.length == 0)
-            //         return;
-            //     this.ShowFile("./Frames/SelectExercise.html");
-            //     this.State = StateEnum.SELECTEXERCISE;
-            //     break;
+            case StateEnum.USERNAME:
+                this.UserName = $("#tbUserName")[0].value;
+                if (this.UserName.length == 0) return;
+                this.ShowHtml(aboutStationHtml);
+                $("#btnNext").click(btnNextClick);
+                this.State = StateEnum.ABOUTSTATION;
+                break;
             // case StateEnum.SELECTEXERCISE:
             //     let options = $("input");
             //     for (var i = 0; i < options.length; i++) {
@@ -113,6 +115,5 @@ window.onload = () => {
 };
 
 function btnNextClick() {
-    controller.NextFrame();    
+    controller.NextFrame();
 }
-
