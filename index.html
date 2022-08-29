@@ -14,14 +14,33 @@
 </head>
 
 <body>
-    <script>
-        function resizeIframe(obj) {
-            obj.style.height = (obj.contentWindow.document.body.scrollHeight + 100) + 'px';
-        }
-    </script>
-
     <div id="divMain" class="w3-container">
-        <iframe id="frame" onload="resizeIframe(this)" onresize="resizeIframe(this)"></iframe>
+        <div id="intro" hidden="true">
+            <p>Программа «<strong>Проверка соответствия производственного объекта требованиям пожарной безопасности</strong>» предназначена для моделирования экспертной, надзорной и инспекторско-аудиторской деятельности сотрудника Государственной противопожарной службы МЧС России по проверке соответствия производственного объекта требованиям пожарной безопасности, в качестве которого принята автозаправочная станция (АЗС).</p>
+            <p>Цель работы с программой – закрепление теоретических знаний и практических умений по анализу пожарной опасности оборудования, установленного на АЗС, проведению оценки соответствия требованиям нормативных документов в области пожарной безопасности.</p>
+        </div>
+        <div id="userName" hidden="true">
+            <h2>Введите фимилию и инициалы</h2>
+            <input id='tbUserName' type='text' class='form-control' placeholder='ФИО'>
+            <h2>Номер группы</h2>
+            <select class='form-control' id='selectGroup'>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+        <div id="aboutStation" hidden="true">
+            <h2>Ознакомление с технологическим процессом и характеристикой АЗС</h2>..
+            <h3>Сущность технологического процесса автозаправочной станции</h3>..
+            <h3>Характеристика объекта</h3>..
+            <h3 id="dateFrom">Дата ввода в эксплуатацию: 11.11.11</h3>
+        </div>
+        <div id="selectFuel" hidden="true">
+            <h2>Определите топливо, по которому производится оценка пожаровзрывоопасности технологического процесса на АЗС</h2>
+            <p id='fuels'>Виды топлива, обращающиеся на АЗС:</p>
+        </div>
         <hr>
         <button id='btnNext' class='w3-button w3-round w3-teal' onclick="btnNextClick()">Далее</button>
     </div>

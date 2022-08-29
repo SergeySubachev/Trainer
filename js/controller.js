@@ -9,43 +9,40 @@
 }
 
 class Controller {
-    UserName;
-    StartTime;
-    State = -1;
-    Exercise;
-    ExerciseSettings = [];
-    EmailContent = " ";
+    userName;
+    dateFromWorking
+    startTime;
+    state = -1;
+    exercise;
+    exerciseSettings = [];
 
-    Start() {
-        this.State = StateEnum.INTRO;
-        this.ShowHtml("intro.html");
-        // document.getElementById('btnNext').onclick = btnNextClick;
-    }
-
-    ShowHtml(src) {
-        var frame = document.getElementById('frame');
-        frame.src = src;
-        //frame.style.height = (frame.window.document.body.height + 100) + 'px';
+    Init() {
+        var year = 1990 + Math.round(Math.random() * 31);
+        var mounth = 1 + Math.round(Math.random() * 11);
+        this.dateFromWorking = new Date(year, mounth, 1);
+        document.getElementById("dateFrom").innerHTML = `Дата ввода в эксплуатацию: 01.${mounth < 10 ? "0" + mounth : mounth}.${year}.`;
+        document.getElementById("intro").hidden = false;
+        this.state = StateEnum.INTRO;
     }
 
     NextFrame() {
-        switch (this.State) {
+        switch (this.state) {
             case StateEnum.INTRO:
-                this.ShowHtml(userNameHtml);
-                document.getElementById('btnNext').onclick = btnNextClick;
-                this.State = StateEnum.USERNAME;
+                document.getElementById("intro").hidden = true;
+                document.getElementById("userName").hidden = false;
+                this.state = StateEnum.USERNAME;
                 break;
             case StateEnum.USERNAME:
                 this.UserName = document.getElementById("tbUserName").value;
                 if (this.UserName.length == 0) return;
-                this.ShowHtml(aboutStationHtml);
-                document.getElementById('btnNext').onclick = btnNextClick;
-                this.State = StateEnum.ABOUTSTATION;
+                document.getElementById("userName").hidden = true;
+                document.getElementById("aboutStation").hidden = false;
+                this.state = StateEnum.ABOUTSTATION;
                 break;
             case StateEnum.ABOUTSTATION:
-                this.ShowHtml(selectFuelHtml);
-                document.getElementById('btnNext').onclick = btnNextClick;
-                this.State = StateEnum.SELECTFUEL;
+                document.getElementById("aboutStation").hidden = true;
+                document.getElementById("selectFuel").hidden = false;
+                this.state = StateEnum.SELECTFUEL;
                 break;
             // case StateEnum.SELECTEXERCISE:
             //     let options = $("input");
@@ -119,7 +116,7 @@ class Controller {
 let controller = new Controller();
 
 window.onload = () => {
-    controller.Start();
+    controller.Init();
 };
 
 function btnNextClick() {
