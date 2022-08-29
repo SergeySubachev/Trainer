@@ -19,30 +19,30 @@ class Controller {
     Start() {
         this.State = StateEnum.INTRO;
         this.ShowHtml(introHtml);
-        $("#btnNext").click(btnNextClick);
+        document.getElementById('btnNext').onclick = btnNextClick;
     }
 
     ShowHtml(html) {
-        $("#divMain").html(html);
+        document.getElementById('divMain').innerHTML = html;
     }
 
     NextFrame() {
         switch (this.State) {
             case StateEnum.INTRO:
                 this.ShowHtml(userNameHtml);
-                $("#btnNext").click(btnNextClick);
+                document.getElementById('btnNext').onclick = btnNextClick;
                 this.State = StateEnum.USERNAME;
                 break;
             case StateEnum.USERNAME:
-                this.UserName = $("#tbUserName")[0].value;
+                this.UserName = document.getElementById("tbUserName").value;
                 if (this.UserName.length == 0) return;
                 this.ShowHtml(aboutStationHtml);
-                $("#btnNext").click(btnNextClick);
+                document.getElementById('btnNext').onclick = btnNextClick;
                 this.State = StateEnum.ABOUTSTATION;
                 break;
             case StateEnum.ABOUTSTATION:
                 this.ShowHtml(selectFuelHtml);
-                $("#btnNext").click(btnNextClick);
+                document.getElementById('btnNext').onclick = btnNextClick;
                 this.State = StateEnum.SELECTFUEL;
                 break;
             // case StateEnum.SELECTEXERCISE:
