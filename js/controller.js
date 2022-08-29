@@ -18,12 +18,14 @@ class Controller {
 
     Start() {
         this.State = StateEnum.INTRO;
-        this.ShowHtml(introHtml);
-        document.getElementById('btnNext').onclick = btnNextClick;
+        this.ShowHtml("intro.html");
+        // document.getElementById('btnNext').onclick = btnNextClick;
     }
 
-    ShowHtml(html) {
-        document.getElementById('divMain').innerHTML = html;
+    ShowHtml(src) {
+        var frame = document.getElementById('frame');
+        frame.src = src;
+        //frame.style.height = (frame.window.document.body.height + 100) + 'px';
     }
 
     NextFrame() {
