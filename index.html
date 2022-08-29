@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="w3.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="js/fuel.js"></script>
     <script src="js/controller.js"></script>
 </head>
 
@@ -21,14 +22,20 @@
         </div>
         <div id="userName" hidden="true">
             <h2>Введите фимилию и инициалы</h2>
+            <i class="w3-xxlarge fa fa-user"></i>
             <input id='tbUserName' type='text' class='form-control' placeholder='ФИО'>
             <h2>Номер группы</h2>
-            <select class='form-control' id='selectGroup'>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+            <select id='selectGroup'>
+                <option>ПБ-031</option>
+                <option>ПБ-032</option>
+                <option>ПБв-031</option>
+                <option>ТБ-033</option>
+                <option>ТБ-034</option>
+                <option>ТБ-035</option>
+                <option>ТБ-036</option>
+                <option>ТБ-037</option>
+                <option>ТБв-031</option>
+                <option>Группа ФЗОППК</option>
             </select>
         </div>
         <div id="aboutStation" hidden="true">
@@ -37,9 +44,25 @@
             <h3>Характеристика объекта</h3>..
             <h3 id="dateFrom">Дата ввода в эксплуатацию: 11.11.11</h3>
         </div>
-        <div id="selectFuel" hidden="true">
+        <div id="divAboutFuel">
             <h2>Определите топливо, по которому производится оценка пожаровзрывоопасности технологического процесса на АЗС</h2>
-            <p id='fuels'>Виды топлива, обращающиеся на АЗС:</p>
+            <h3>Пожароопасные свойства веществ, обращающихся в технологическом процессе АЗС</h3>
+            <table id="tableFuels">
+                <tr>
+                    <th rowspan="2">Наименование вещества</th>
+                    <th rowspan="2">Темпатура вспышки</th>
+                    <th rowspan="2">Температура самовоспламенения</th>
+                    <th colspan="2">Концентрационные пределы воспламенения</th>
+                    <th>БЭМЗ, мм</th>
+                </tr>
+                <tr>
+                    <th>н</th>
+                    <th>в</th>
+                </tr>
+            </table>
+            <h3>Оценку пожаровзрывоопасности технологического процесса АЗС с точки зрения категорий, классов зон следует проводить по топливу:
+                <select id="selectFuel"></select>
+            </h3>
         </div>
         <hr>
         <button id='btnNext' class='w3-button w3-round w3-teal' onclick="btnNextClick()">Далее</button>
