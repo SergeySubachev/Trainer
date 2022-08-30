@@ -11,6 +11,13 @@
     <link rel="stylesheet" href="w3.css">
     <link rel="stylesheet" href="styles.css">
     <script src="js/fuel.js"></script>
+
+    <script src="js/task.js"></script>
+    <script src="js/classZoneTask.js"></script>
+
+    <script src="js/exercise.js"></script>
+    <script src="js/classZoneExercise.js"></script>
+
     <script src="js/controller.js"></script>
 </head>
 
@@ -26,6 +33,7 @@
             <input id='tbUserName' type='text' class='form-control' placeholder='ФИО'>
             <h2>Номер группы</h2>
             <select id='selectGroup'>
+                <option value="none" selected disabled hidden>выберите группу...</option>
                 <option>ПБ-031</option>
                 <option>ПБ-032</option>
                 <option>ПБв-031</option>
@@ -62,7 +70,7 @@
             </table>
             <h3>Оценку пожаровзрывоопасности технологического процесса АЗС с точки зрения категорий, классов зон следует проводить по топливу:
                 <select id="selectFuel">
-                    <option value="none" selected disabled hidden>Select an Option</option>
+                    <option value="none" selected disabled hidden>выберите вещество...</option>
                 </select>
             </h3>
         </div>

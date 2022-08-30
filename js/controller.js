@@ -64,6 +64,7 @@ class Controller {
             case StateEnum.USERNAME:
                 this.UserName = document.getElementById("tbUserName").value;
                 if (this.UserName.length == 0) return;
+                if (document.getElementById("selectGroup").value == "none") return;
                 document.getElementById("userName").hidden = true;
                 document.getElementById("aboutStation").hidden = false;
                 this.state = StateEnum.ABOUTSTATION;
@@ -72,6 +73,12 @@ class Controller {
                 document.getElementById("aboutStation").hidden = true;
                 document.getElementById("divAboutFuel").hidden = false;
                 this.state = StateEnum.SELECTFUEL;
+                break;
+            case StateEnum.SELECTFUEL:
+                if (document.getElementById("selectFuel").value == "none") return;
+                document.getElementById("divAboutFuel").hidden = true;
+                //document.getElementById("divAboutFuel").hidden = false;
+                //this.state = StateEnum.SELECTFUEL;
                 break;
             // case StateEnum.SELECTEXERCISE:
             //     let options = $("input");
