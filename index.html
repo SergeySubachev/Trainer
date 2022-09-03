@@ -12,22 +12,23 @@
     <link rel="stylesheet" href="styles.css">
     <script src="js/fuel.js"></script>
 
-    <script src="js/task.js"></script>
+    <!-- <script src="js/task.js"></script>
     <script src="js/classZoneTask.js"></script>
 
     <script src="js/exercise.js"></script>
-    <script src="js/classZoneExercise.js"></script>
+    <script src="js/classZoneExercise.js"></script> -->
 
+    <script src="js/frames.js"></script>
     <script src="js/controller.js"></script>
 </head>
 
 <body>
     <div id="divMain" class="w3-container">
-        <div id="intro" hidden="true">
+        <div id="divIntro" hidden="true">
             <p>Программа «<strong>Проверка соответствия производственного объекта требованиям пожарной безопасности</strong>» предназначена для моделирования экспертной, надзорной и инспекторско-аудиторской деятельности сотрудника Государственной противопожарной службы МЧС России по проверке соответствия производственного объекта требованиям пожарной безопасности, в качестве которого принята автозаправочная станция (АЗС).</p>
             <p>Цель работы с программой – закрепление теоретических знаний и практических умений по анализу пожарной опасности оборудования, установленного на АЗС, проведению оценки соответствия требованиям нормативных документов в области пожарной безопасности.</p>
         </div>
-        <div id="userName" hidden="true">
+        <div id="divUserName" hidden="true">
             <h2>Введите фимилию и инициалы</h2>
             <i class="w3-xxlarge fa fa-user"></i>
             <input id='tbUserName' type='text' class='form-control' placeholder='ФИО'>
@@ -46,33 +47,34 @@
                 <option>Группа ФЗОППК</option>
             </select>
         </div>
-        <div id="aboutStation" hidden="true">
+        <div id="divAboutStation" hidden="true">
             <h2>Ознакомление с технологическим процессом и характеристикой АЗС</h2>..
             <h3>Сущность технологического процесса автозаправочной станции</h3>..
             <h3>Характеристика объекта</h3>..
             <h3 id="dateFrom">Дата ввода в эксплуатацию: 11.11.11</h3>
         </div>
-        <div id="divAboutFuel">
-            <h2>Определите топливо, по которому производится оценка пожаровзрывоопасности технологического процесса на АЗС</h2>
-            <h3>Пожароопасные свойства веществ, обращающихся в технологическом процессе АЗС</h3>
+        <div id="divAboutFuel" hidden="true">
+            <h2>Определите категорию и группу взрывоопасной смеси видов топлива, обращающихся в технологическом процессе АЗС</h2>
+            <h3>Пожароопасные свойства веществ</h3>
             <table id="tableFuels">
                 <tr>
                     <th rowspan="2">Наименование вещества</th>
                     <th rowspan="2">Темпатура вспышки</th>
                     <th rowspan="2">Температура самовоспламенения</th>
                     <th colspan="2">Концентрационные пределы воспламенения</th>
-                    <th>БЭМЗ, мм</th>
+                    <th rowspan="2">Категория в.о.с.</th>
+                    <th rowspan="2">Группа в.о.с.</th>
                 </tr>
                 <tr>
                     <th>нижний</th>
                     <th>верхний</th>
                 </tr>
             </table>
-            <h3>Оценку пожаровзрывоопасности технологического процесса АЗС с точки зрения категорий, классов зон следует проводить по топливу:
+            <!-- <h3>Оценку пожаровзрывоопасности технологического процесса АЗС с точки зрения категорий, классов зон следует проводить по топливу:
                 <select id="selectFuel">
                     <option value="none" selected disabled hidden>выберите вещество...</option>
                 </select>
-            </h3>
+            </h3> -->
         </div>
         <hr>
         <button id='btnNext' class='w3-button w3-round w3-teal' onclick="btnNextClick()">Далее</button>
