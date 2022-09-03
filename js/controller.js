@@ -1,4 +1,4 @@
-﻿let StateEnum = {
+﻿const StateEnum = {
     INTRO: 0,
     USERNAME: 1,
     ABOUTSTATION: 2,
@@ -14,43 +14,44 @@ class Controller {
     startTime;
     state = -1;
     exercise;
-    exerciseSettings = [];
 
     Init() {
         document.getElementById("intro").hidden = false;
         this.state = StateEnum.INTRO;
 
-        var year = 1990 + Math.round(Math.random() * 31);
-        var mounth = 1 + Math.round(Math.random() * 11);
+        let year = 1990 + Math.round(Math.random() * 31);
+        let mounth = 1 + Math.round(Math.random() * 11);
         this.dateFromWorking = new Date(year, mounth, 1);
         document.getElementById("dateFrom").innerHTML = `Дата ввода в эксплуатацию: 01.${mounth < 10 ? "0" + mounth : mounth}.${year}.`;
 
-        var tableFuels = document.getElementById("tableFuels");
-        var fuels =  [ gazoline80, gazoline92, gazoline95, dieselSummer, dieselWinter ];        
-        for (var fuel of fuels) {
-            var row = document.createElement("tr");
-            var tdName = document.createElement("td");
+        let tableFuels = document.getElementById("tableFuels");
+        let fuels =  [ gazoline80, gazoline92, gazoline95, dieselSummer, dieselWinter ];        
+        for (let fuel of fuels) {
+            let row = document.createElement("tr");
+            let tdName = document.createElement("td");
             tdName.innerHTML = fuel.Name;
             row.appendChild(tdName);
-            var tdTvsp = document.createElement("td");
+            let tdTvsp = document.createElement("td");
             tdTvsp.innerHTML = fuel.Tvsp;
             row.appendChild(tdTvsp);
-            var tdTsv = document.createElement("td");
+            let tdTsv = document.createElement("td");
             tdTsv.innerHTML = fuel.Tsv;
             row.appendChild(tdTsv);
-            var tdClow = document.createElement("td");
+            let tdClow = document.createElement("td");
             tdClow.innerHTML = fuel.Clow;
             row.appendChild(tdClow);
-            var tdHigh = document.createElement("td");
+            let tdHigh = document.createElement("td");
             tdHigh.innerHTML = fuel.Chigh;
             row.appendChild(tdHigh);
             tableFuels.appendChild(row);
 
-            var selectFuel = document.getElementById("selectFuel");
-            var opt = document.createElement("option");
+            let selectFuel = document.getElementById("selectFuel");
+            let opt = document.createElement("option");
             opt.value = fuel;
             opt.text = fuel.Name;
             selectFuel.appendChild(opt);
+
+
         }
     }
 
@@ -80,43 +81,6 @@ class Controller {
                 //document.getElementById("divAboutFuel").hidden = false;
                 //this.state = StateEnum.SELECTFUEL;
                 break;
-            // case StateEnum.SELECTEXERCISE:
-            //     let options = $("input");
-            //     for (var i = 0; i < options.length; i++) {
-            //         let inp = options[i];
-            //         if (inp.checked) {
-            //             let count = $("#tbTasksCount")[0].value;
-            //             switch (inp.value) {
-            //                 case "0":
-            //                     //this.ReadExerciseSettings("ClassZoneExercise");
-            //                     this.Exercise = new ClassZoneExercise(count);
-            //                     break;
-            //                 case "1":
-            //                     this.Exercise = new CategoryAndGroupExercise(count);
-            //                     break;
-            //                 case "2":
-            //                     this.Exercise = new DeviceMarkingExercise(count);
-            //                     break;
-            //                 case "3":
-            //                     this.Exercise = new DeviceCheckExercise(count);
-            //                     break;
-            //                 case "5":
-            //                     this.Exercise = new CabelMarkingExercise(count);
-            //                     break;
-            //                 case "7":
-            //                     this.Exercise = new CabelCheckExercise(count);
-            //                     break;
-            //                 default:
-            //                     this.Exercise = new ClassZoneExercise(count);
-            //             }
-            //             this.Exercise.Begin();
-            //             this.ShowHtml(this.Exercise.GetCurrentTask().Html);
-            //             this.State = StateEnum.EXERCISE;
-            //             this.StartTime = new Date().getTime();
-            //             return;
-            //         }
-            //     }
-            //     break;
             // case StateEnum.EXERCISE:
             //     let task = this.Exercise.GetCurrentTask();
             //     task.OnAnswer();
@@ -149,7 +113,7 @@ class Controller {
     }
 }
 
-let controller = new Controller();
+const controller = new Controller();
 
 window.onload = () => {
     controller.Init();

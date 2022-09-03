@@ -1,9 +1,11 @@
 ﻿class Task {
-    Html = "";
+    divId = "divTask"
     Answered = false;
+
     OnAnswer() {
         this.Answered = true;
     }
+
     GetResult() {
         if (this.Answered)
             return 1;
@@ -12,56 +14,56 @@
     }
 }
 
-// class OneInManyTest extends Task {
-//     TestText = "";
-//     SelectID = "OneInManyTest";
-//     Options = [];
-//     CorrectOption = "";
-//     AnsweredOption;
+class OneInManyTest extends Task {
+    TestText = "";
+    SelectID = "OneInManyTest";
+    Options = [];
+    CorrectOption = "";
+    AnsweredOption;
 
-//     constructor(selectId) {
-//         super();
-//         this.SelectID = selectId;
-//     }
+    constructor(selectId) {
+        super();
+        this.SelectID = selectId;
+    }
 
-//     OnAnswer() {
-//         //если внутри select перечислены option (т.е. checkbox)
-//         let options = $(`#${this.SelectID} option`);
-//         if (options.length > 0) {
-//             for (var i = 0; i < options.length; i++) {
-//                 let opt = options[i];
-//                 if (opt.selected) {
-//                     if (!opt.disabled) {
-//                         this.AnsweredOption = opt.value;
-//                         this.Answered = true;
-//                     }
-//                     return;
-//                 }
-//             }
-//             return;
-//         }
+    OnAnswer() {
+        //если внутри select перечислены option (т.е. checkbox)
+        let options = $(`#${this.SelectID} option`);
+        if (options.length > 0) {
+            for (var i = 0; i < options.length; i++) {
+                let opt = options[i];
+                if (opt.selected) {
+                    if (!opt.disabled) {
+                        this.AnsweredOption = opt.value;
+                        this.Answered = true;
+                    }
+                    return;
+                }
+            }
+            return;
+        }
 
-//         //если radio
-//         options = $(`#${this.SelectID} input`);
-//         if (options.length > 0) {
-//             for (var i = 0; i < options.length; i++) {
-//                 let opt = options[i];
-//                 if (opt.checked) {
-//                     this.AnsweredOption = opt.value;
-//                     this.Answered = true;
-//                     return;
-//                 }
-//             }   
-//         }        
-//     }
+        //если radio
+        options = $(`#${this.SelectID} input`);
+        if (options.length > 0) {
+            for (var i = 0; i < options.length; i++) {
+                let opt = options[i];
+                if (opt.checked) {
+                    this.AnsweredOption = opt.value;
+                    this.Answered = true;
+                    return;
+                }
+            }   
+        }        
+    }
 
-//     GetResult() {
-//         if (this.Answered && (this.AnsweredOption == this.CorrectOption))
-//             return 1;
-//         else
-//             return 0;
-//     }
-// }
+    GetResult() {
+        if (this.Answered && (this.AnsweredOption == this.CorrectOption))
+            return 1;
+        else
+            return 0;
+    }
+}
 
 // class ManyInManyTest extends Task {
 //     TestText = "";
