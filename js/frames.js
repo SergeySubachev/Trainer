@@ -126,21 +126,36 @@ class FrameClassZone extends Frame {
     }
 }
 
-class FrameCheckEngine extends Frame {
-    Tasks = [];
+// class FrameCheckEngine extends Frame {
+//     Tasks = [];
 
-    Init() {
-        let correctOptions = [];
-        let task = new DeviceCheckTask("divCheckEngine", correctOptions);
-        task.Init();
-        this.Tasks.push(task);
+//     Init() {
+//         let frame = this.PrevFrame;
+//         while (!frame.hasOwnProperty("Fuels")) {
+//             frame = frame.PrevFrame;
+//         }
 
-        correctOptions = [];
-        task = new DeviceCheckTask("divCheckStarter", correctOptions);
-        task.Init();
-        this.Tasks.push(task);
-    }
-}
+//         //наивысшая категория и группа
+//         let maxCategory = "IIA";
+//         let maxGroupNumber = 1;
+//         for (const fuel of frame.Fuels) {
+//             if (maxCategory == "IIA" && fuel.Category != "IIA") maxCategory = fuel.Category;
+//             if (maxCategory == "IIB" && fuel.Category == "IIC") maxCategory = fuel.Category;
+//             let num = parseInt(fuel.Group.substring(1, 2));
+//             if (num > maxGroupNumber) maxGroupNumber = num;
+//         }
+//         let maxGroup = 
+
+//         let task = new EngineCheckTask("divCheckEngine", );
+//         task.Init();
+//         this.Tasks.push(task);
+
+//         correctOptions = [];
+//         task = new EngineCheckTask("divCheckStarter", correctOptions);
+//         task.Init();
+//         this.Tasks.push(task);
+//     }
+// }
 
 class FrameResult extends Frame {
     Show() {

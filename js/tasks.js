@@ -145,7 +145,48 @@ class ManyInManyTest extends Task {
 }
 
 class DeviceCheckTask extends ManyInManyTest {
+    DeviceLevel = "";
+    DeviceProtectionType = "";
+    DeviceGroup = "";
+    DeviceTempClass = "";
+    DeviceTempClass = "";
+
     constructor(containerId, correctOptions) {
         super(containerId, ["соответствует", "не соответствует по классу зоны", "не соответствует по категории ВОС", "не соответствует по группе ВОС"], correctOptions);
     }
+
+    GetRandom(options = []) {
+        let i = Math.round(Math.random(options.length - 1));
+        return options[i];
+    }
 }
+
+//проверка двигателя
+// class EngineCheckTask extends DeviceCheckTask {
+//     constructor(containerId) {
+//         this.DeviceLevel = this.GetRandom(["0", "1", "2"]);
+//         let typeOptions;
+//         switch (this.DeviceLevel) {
+//             case "0":
+//                 typeOptions = ["d", "ia", "s"]
+//                 break;
+//             case "1":
+//                 typeOptions = ["d", "ib", "s"]
+//                 break;
+//             case "2":
+//                 typeOptions = ["d", "ic", "e", "s"]
+//                 break;
+//         }
+//         this.DeviceProtectionType = this.GetRandom(typeOptions);
+//         if (this.DeviceProtectionType == "d") {
+//             this.DeviceGroup = this.GetRandom(["IIA", "IIB", "IIC"]);
+//         } else {
+//             this.DeviceGroup = "II"
+//         }
+//         this.DeviceTempClass = this.GetRandom(["T1", "T2", "T3", "T4", "T5", "T6"]);
+
+
+//         let correctOptions = ??????
+//         super(containerId, correctOptions);
+//     }
+// }
