@@ -1,5 +1,28 @@
+class SubstanceCategory {
+    constructor(name, value) {
+        this.Name = name;
+        this.Value = value;
+    }
+}
+const SUBSTANCE_IIA = new SubstanceCategory("IIA", 0);
+const SUBSTANCE_IIB = new SubstanceCategory("IIB", 1);
+const SUBSTANCE_IIC = new SubstanceCategory("IIC", 2);
+
+class SubstanceGroup {
+    constructor(name, value) {
+        this.Name = name;
+        this.Value = value;
+    }
+}
+const SUBSTANCE_T1 = new SubstanceGroup("T1", 1);
+const SUBSTANCE_T2 = new SubstanceGroup("T2", 2);
+const SUBSTANCE_T3 = new SubstanceGroup("T3", 3);
+const SUBSTANCE_T4 = new SubstanceGroup("T4", 4);
+const SUBSTANCE_T5 = new SubstanceGroup("T5", 5);
+const SUBSTANCE_T6 = new SubstanceGroup("T6", 6);
+
 class Fuel {
-    constructor(Name, Tvsp, Tsv, Clow, Chigh, Category, Group) {
+    constructor(Name = "", Tvsp = 0, Tsv = 0, Clow = 0, Chigh = 0, Category = SUBSTANCE_IIA, Group = SUBSTANCE_T1) {
         this.Name = Name;
         this.Tvsp = Tvsp;
         this.Tsv = Tsv;
@@ -10,8 +33,8 @@ class Fuel {
     }
 }
 
-const gazoline80 = new Fuel("Бензин АИ-80", -37, 320, 0.78, 5.6, "IIA", "T3");
-const gazoline92 = new Fuel("Бензин АИ-92", -36, 370, 0.98, 5.5, "IIA", "T3");
-const gazoline95 = new Fuel("Бензин АИ-95", -39, 375, 1.1, 6.14, "IIA", "T3");
-const dieselSummer = new Fuel("Дизельное топливо 'Л'", 40, 210, 0.52, 6.2, "IIB", "T3");
-const dieselWinter = new Fuel("Дизельное топливо 'З'", 35, 225, 0.61, 6.2, "IIB", "T3");
+const gazoline80 = new Fuel("Бензин АИ-80", -37, 320, 0.78, 5.6, SUBSTANCE_IIA, SUBSTANCE_T3);
+const gazoline92 = new Fuel("Бензин АИ-92", -36, 370, 0.98, 5.5, SUBSTANCE_IIA, SUBSTANCE_T3);
+const gazoline95 = new Fuel("Бензин АИ-95", -39, 375, 1.1, 6.14, SUBSTANCE_IIA, SUBSTANCE_T3);
+const dieselSummer = new Fuel("Дизельное топливо 'Л'", 40, 210, 0.52, 6.2, SUBSTANCE_IIB, SUBSTANCE_T3);
+const dieselWinter = new Fuel("Дизельное топливо 'З'", 35, 225, 0.61, 6.2, SUBSTANCE_IIB, SUBSTANCE_T3);

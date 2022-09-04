@@ -81,14 +81,14 @@ class FrameAboutFuel extends Frame {
             let tdCategory = document.createElement("td");
             tdCategory.id = fuel.Name + " Category";
             row.appendChild(tdCategory);
-            let categoryTask = new SubstanceCategoryTask(tdCategory.id, fuel.Category);
+            let categoryTask = new SubstanceCategoryTask(tdCategory.id, fuel.Category.Name);
             categoryTask.Init();
             this.Tasks.push(categoryTask);
 
             let tdGroup = document.createElement("td");
             tdGroup.id = fuel.Name + " Group";
             row.appendChild(tdGroup);
-            let groupTask = new SubstanceGroupTask(tdGroup.id, fuel.Group);
+            let groupTask = new SubstanceGroupTask(tdGroup.id, fuel.Group.Name);
             groupTask.Init();
             this.Tasks.push(groupTask);
         }
@@ -126,36 +126,31 @@ class FrameClassZone extends Frame {
     }
 }
 
-// class FrameCheckEngine extends Frame {
-//     Tasks = [];
+class FrameCheckEngine extends Frame {
+    Tasks = [];
 
-//     Init() {
-//         let frame = this.PrevFrame;
-//         while (!frame.hasOwnProperty("Fuels")) {
-//             frame = frame.PrevFrame;
-//         }
+    Init() {
+        //наивысшая категория и группа ВОС из используемых веществ
+        let frame = this.PrevFrame;
+        while (!frame.hasOwnProperty("Fuels")) {
+            frame = frame.PrevFrame;
+        }
+        let maxCategory = SUBSTANCE_IIA;
+        let maxGroup = SUBSTANCE_T1;
+        for (const fuel of frame.Fuels) {
+            if (fuel.Category.Value > maxCategory.Value) maxCategory = fuel.Category;
+            if (fuel.Group.Value > maxGroup.Value) maxGroup = fuel.Group;
+        }
 
-//         //наивысшая категория и группа
-//         let maxCategory = "IIA";
-//         let maxGroupNumber = 1;
-//         for (const fuel of frame.Fuels) {
-//             if (maxCategory == "IIA" && fuel.Category != "IIA") maxCategory = fuel.Category;
-//             if (maxCategory == "IIB" && fuel.Category == "IIC") maxCategory = fuel.Category;
-//             let num = parseInt(fuel.Group.substring(1, 2));
-//             if (num > maxGroupNumber) maxGroupNumber = num;
-//         }
-//         let maxGroup = 
+        let task = new EngineCheckTask("divCheckEngine", maxCategory, maxGroup);
+        task.Init();
+        this.Tasks.push(task);
 
-//         let task = new EngineCheckTask("divCheckEngine", );
-//         task.Init();
-//         this.Tasks.push(task);
-
-//         correctOptions = [];
-//         task = new EngineCheckTask("divCheckStarter", correctOptions);
-//         task.Init();
-//         this.Tasks.push(task);
-//     }
-// }
+        task = new StarterCheckTask("divCheckStarter", maxCategory, maxGroup);
+        task.Init();
+        this.Tasks.push(task);
+    }
+}
 
 class FrameResult extends Frame {
     Show() {
