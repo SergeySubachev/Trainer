@@ -85,35 +85,31 @@ class ManyInManyTest extends Task {
         }
     }
 
-    // OnAnswer() {
-    //     this.AnsweredOptions = [];
-    //     let options = $(`#${this.SelectID} input`); //checkboxes
-    //     for (var i = 0; i < options.length; i++) {
-    //         let opt = options[i];
-    //         if (opt.checked) {
-    //             this.AnsweredOptions.push(opt.value);
-    //         }
-    //     }
-    //     this.Answered = true;
-    // }
+    GetResult() {
+        let answeredOptions = [];
+        let container = document.getElementById(this.ContainerId);
+        let divs = container.children;
+        for (const div of divs) {
+            let label = div.firstChild;
+            let checkbox = label.firstChild;
+            if (checkbox.checked) {
+                answeredOptions.push(checkbox.value);
+            }
+        }
 
-    // GetResult() {
-    //     // if (!this.Answered)
-    //     //     return 0;
+        //если что-то не отметили - 0
+        for (const correctOption of this.CorrectOptions) {
+            if (answeredOptions.indexOf(correctOption) < 0)
+                return 0;
+        }
 
-    //     // //если что-то не отметили - 0
-    //     // for (var i = 0; i < this.CorrectOptions.length; i++) {
-    //     //     if (this.AnsweredOptions.indexOf(this.CorrectOptions[i]) < 0)
-    //     //         return 0;
-    //     // }
+        //если отметили что-то лишнее - 0
+        for (const answeredOption of answeredOptions) {
+            if (this.CorrectOptions.indexOf(answeredOption) < 0)
+                return 0;
+        }
 
-    //     // //если отметили что-то лишнее - 0
-    //     // for (var i = 0; i < this.AnsweredOptions.length; i++) {
-    //     //     if (this.CorrectOptions.indexOf(this.AnsweredOptions[i]) < 0)
-    //     //         return 0;
-    //     // }
-
-    //     //только если полное совпадение отмеченных и неотмеченных
-    //     return 1;
-    // }
+        //только если полное совпадение отмеченных и неотмеченных
+        return 1;
+    }
 }
