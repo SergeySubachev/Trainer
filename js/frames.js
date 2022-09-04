@@ -120,9 +120,10 @@ class FrameResult extends Frame {
                     userScore += task.GetResult();
                 }
             }
+            frame = frame.NextFrame;
         }
         let percent = userScore / allScore * 100;
-        document.getElementById("resultPercent").innerText = `Результат: ${userScore} из ${allScore} (${percent})`;
+        document.getElementById("resultPercent").innerText = `Результат: ${userScore} из ${allScore} (${percent}%)`;
 
         super.Show();
     }

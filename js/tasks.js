@@ -3,6 +3,10 @@
 
     Init() {}
 
+    IsComplete() {
+        return true;
+    }
+
     GetResult() {
         return 0;
     }
@@ -21,60 +25,36 @@ class OneInManyTest extends Task {
 
     Init() {
         let container = document.getElementById(this.ContainerId);
-        let select = document.createElement("select");
-        container.appendChild(select);
+        let selector = document.createElement("select");
+        container.appendChild(selector);
         let opt = document.createElement("option");
         opt.value = "none";
         opt.selected = true;
         opt.disabled = true;
         opt.hidden = true;
         opt.innerText = "???";
-        select.appendChild(opt);
+        selector.appendChild(opt);
         for (let optVal of this.Options) {
             opt = document.createElement("option");
             opt.value = optVal;
             opt.innerText = optVal;
-            select.appendChild(opt);
+            selector.appendChild(opt);
         }
     }
 
-    // OnAnswer() {
-    //     //если внутри select перечислены option (т.е. checkbox)
-    //     let options = $(`#${this.SelectID} option`);
-    //     if (options.length > 0) {
-    //         for (var i = 0; i < options.length; i++) {
-    //             let opt = options[i];
-    //             if (opt.selected) {
-    //                 if (!opt.disabled) {
-    //                     this.AnsweredOption = opt.value;
-    //                     this.Answered = true;
-    //                 }
-    //                 return;
-    //             }
-    //         }
-    //         return;
-    //     }
+    IsComplete() {
+        let container = document.getElementById(this.ContainerId);
+        let selector = container.firstChild;
+        if (selector.value == "none") return false;
+        return true;
+    }
 
-    //     //если radio
-    //     options = $(`#${this.SelectID} input`);
-    //     if (options.length > 0) {
-    //         for (var i = 0; i < options.length; i++) {
-    //             let opt = options[i];
-    //             if (opt.checked) {
-    //                 this.AnsweredOption = opt.value;
-    //                 this.Answered = true;
-    //                 return;
-    //             }
-    //         }   
-    //     }        
-    // }
-
-    // GetResult() {
-    //     if (this.Answered && (this.AnsweredOption == this.CorrectOption))
-    //         return 1;
-    //     else
-    //         return 0;
-    // }
+    GetResult() {
+        let container = document.getElementById(this.ContainerId);
+        let selector = container.firstChild;
+        if (selector.value == this.CorrectOption) return 1;
+        return 0;
+    }
 }
 
 class SubstanceCategoryTask extends OneInManyTest {
