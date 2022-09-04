@@ -8,7 +8,8 @@ window.onload = () => {
         new FrameAboutStation("divAboutStation"),
         new FrameAboutFuel("divAboutFuel"),
         new FrameClassZone("divFrameClassZone"),
-        new FrameCheckEngine("divFrameCheckEngine"),
+        new FrameCheckEngineAndStarter("divFrameCheckEngineAndStarter"),
+        new FrameCheckLamp("divFrameCheckLamp"),
         new FrameResult("divResult")
     ];
     for (let i = 0; i < frames.length; i++) {

@@ -126,8 +126,10 @@ class FrameClassZone extends Frame {
     }
 }
 
-class FrameCheckEngine extends Frame {
+class FrameCheckDevice extends Frame {
     Tasks = [];
+    MaxCategory = SUBSTANCE_IIA;
+    MaxGroup = SUBSTANCE_T1;
 
     Init() {
         //наивысшая категория и группа ВОС из используемых веществ
@@ -135,18 +137,32 @@ class FrameCheckEngine extends Frame {
         while (!frame.hasOwnProperty("Fuels")) {
             frame = frame.PrevFrame;
         }
-        let maxCategory = SUBSTANCE_IIA;
-        let maxGroup = SUBSTANCE_T1;
         for (const fuel of frame.Fuels) {
-            if (fuel.Category.Value > maxCategory.Value) maxCategory = fuel.Category;
-            if (fuel.Group.Value > maxGroup.Value) maxGroup = fuel.Group;
+            if (fuel.Category.Value > this.MaxCategory.Value) this.MaxCategory = fuel.Category;
+            if (fuel.Group.Value > this.MaxGroup.Value) this.MaxGroup = fuel.Group;
         }
+    }
+}
 
-        let task = new EngineCheckTask("divCheckEngine", maxCategory, maxGroup);
+class FrameCheckEngineAndStarter extends FrameCheckDevice {
+    Init() {
+        super.Init();
+
+        let task = new EngineCheckTask("divCheckEngine", this.MaxCategory, this.MaxGroup);
         task.Init();
         this.Tasks.push(task);
 
-        task = new StarterCheckTask("divCheckStarter", maxCategory, maxGroup);
+        task = new StarterCheckTask("divCheckStarter", this.MaxCategory, this.MaxGroup);
+        task.Init();
+        this.Tasks.push(task);
+    }
+}
+
+class FrameCheckLamp extends FrameCheckDevice {
+    Init() {
+        super.Init();
+
+        let task = new LampCheckTask("divCheckLamp", this.MaxCategory, this.MaxGroup);
         task.Init();
         this.Tasks.push(task);
     }
