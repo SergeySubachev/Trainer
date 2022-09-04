@@ -83,47 +83,69 @@ class ClassZoneTask extends OneInManyTest {
     }
 }
 
-// class ManyInManyTest extends Task {
-//     TestText = "";
-//     SelectID = "ManyInManyTest";
-//     Options = [];
-//     CorrectOptions = [];
-//     AnsweredOptions = [];
+class ManyInManyTest extends Task {
+    Options = [];
+    CorrectOptions = [];
 
-//     constructor(selectId) {
-//         super();
-//         this.SelectID = selectId;
-//     }
+    constructor(containerId, options, correctOptions) {
+        super();
+        this.ContainerId = containerId;
+        this.Options = options;
+        this.CorrectOptions = correctOptions;
+    }
 
-//     OnAnswer() {
-//         this.AnsweredOptions = [];
-//         let options = $(`#${this.SelectID} input`); //checkboxes
-//         for (var i = 0; i < options.length; i++) {
-//             let opt = options[i];
-//             if (opt.checked) {
-//                 this.AnsweredOptions.push(opt.value);
-//             }
-//         }
-//         this.Answered = true;
-//     }
+    Init() {
+        let container = document.getElementById(this.ContainerId);
+        for (let option of this.Options) {
+            let div = document.createElement("div");
+            container.appendChild(div);
+            let label = document.createElement("label");
+            div.appendChild(label);
+            let checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.value = option;
+            label.appendChild(checkbox);
+            let span = document.createElement("span");
+            span.innerText = option;
+            label.appendChild(span);
+        }
+    }
 
-//     GetResult() {
-//         if (!this.Answered)
-//             return 0;
+    // OnAnswer() {
+    //     this.AnsweredOptions = [];
+    //     let options = $(`#${this.SelectID} input`); //checkboxes
+    //     for (var i = 0; i < options.length; i++) {
+    //         let opt = options[i];
+    //         if (opt.checked) {
+    //             this.AnsweredOptions.push(opt.value);
+    //         }
+    //     }
+    //     this.Answered = true;
+    // }
 
-//         //если что-то не отметили - 0
-//         for (var i = 0; i < this.CorrectOptions.length; i++) {
-//             if (this.AnsweredOptions.indexOf(this.CorrectOptions[i]) < 0)
-//                 return 0;
-//         }
+    // GetResult() {
+    //     // if (!this.Answered)
+    //     //     return 0;
 
-//         //если отметили что-то лишнее - 0
-//         for (var i = 0; i < this.AnsweredOptions.length; i++) {
-//             if (this.CorrectOptions.indexOf(this.AnsweredOptions[i]) < 0)
-//                 return 0;
-//         }
+    //     // //если что-то не отметили - 0
+    //     // for (var i = 0; i < this.CorrectOptions.length; i++) {
+    //     //     if (this.AnsweredOptions.indexOf(this.CorrectOptions[i]) < 0)
+    //     //         return 0;
+    //     // }
 
-//         //только если полное совпадение отмеченных и неотмеченных
-//         return 1;
-//     }
-// }
+    //     // //если отметили что-то лишнее - 0
+    //     // for (var i = 0; i < this.AnsweredOptions.length; i++) {
+    //     //     if (this.CorrectOptions.indexOf(this.AnsweredOptions[i]) < 0)
+    //     //         return 0;
+    //     // }
+
+    //     //только если полное совпадение отмеченных и неотмеченных
+    //     return 1;
+    // }
+}
+
+class DeviceCheckTask extends ManyInManyTest {
+    constructor(containerId, correctOptions) {
+        super(containerId, ["соответствует", "не соответствует по классу зоны", "не соответствует по категории ВОС", "не соответствует по группе ВОС"], correctOptions);
+    }
+}

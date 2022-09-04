@@ -126,6 +126,22 @@ class FrameClassZone extends Frame {
     }
 }
 
+class FrameCheckEngine extends Frame {
+    Tasks = [];
+
+    Init() {
+        let correctOptions = [];
+        let task = new DeviceCheckTask("divCheckEngine", correctOptions);
+        task.Init();
+        this.Tasks.push(task);
+
+        correctOptions = [];
+        task = new DeviceCheckTask("divCheckStarter", correctOptions);
+        task.Init();
+        this.Tasks.push(task);
+    }
+}
+
 class FrameResult extends Frame {
     Show() {
         let frame = this.PrevFrame;
