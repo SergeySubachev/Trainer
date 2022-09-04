@@ -1,19 +1,19 @@
 class Frame {
-    DivId = "";
+    ContainerId = "";
     NextFrame = null;
 
     constructor(divId) {
-        this.DivId = divId;
+        this.ContainerId = divId;
     }
 
     Init() {}
 
     Hide() {
-        document.getElementById(this.DivId).hidden = true;
+        document.getElementById(this.ContainerId).hidden = true;
     }
 
     Show() {
-        document.getElementById(this.DivId).hidden = false;
+        document.getElementById(this.ContainerId).hidden = false;
     }
     
     //можно переходить дальше
@@ -47,13 +47,15 @@ class FrameAboutStation extends Frame {
 }
 
 class FrameAboutFuel extends Frame {
-    Fuels = [];
+    Fuels = []; //применяемое топливо
+    Tasks = []; //категория и группа смеси
 
     Init() {
         let tableFuels = document.getElementById("tableFuels");
         this.Fuels = [gazoline80, gazoline92, gazoline95, dieselSummer, dieselWinter];
         for (let fuel of this.Fuels) {
             let row = document.createElement("tr");
+            tableFuels.appendChild(row);
 
             let tdName = document.createElement("td");
             tdName.innerHTML = fuel.Name;
@@ -76,48 +78,18 @@ class FrameAboutFuel extends Frame {
             row.appendChild(tdHigh);
 
             let tdCategory = document.createElement("td");
-            let selectCategory = document.createElement("select");
-            let opt = document.createElement("option");
-            opt.value = "none";
-            opt.selected = true;
-            opt.disabled = true;
-            opt.hidden = true;
-            opt.innerText = "выберите категорию";
-            selectCategory.appendChild(opt);
-            let categories = [ "IIA", "IIB", "IIC" ];
-            for (let cat of categories) {
-                opt = document.createElement("option");
-                opt.value = cat;
-                opt.innerText = cat;
-                selectCategory.appendChild(opt);
-            }
-            tdCategory.appendChild(selectCategory);
+            tdCategory.id = fuel.Name + " Category";
             row.appendChild(tdCategory);
+            let categoryTask = new SubstanceCategoryTask(tdCategory.id, fuel.Category);
+            categoryTask.Init();
+            this.Tasks.push(categoryTask);
 
             let tdGroup = document.createElement("td");
-            let selectGroup = document.createElement("select");
-            opt = document.createElement("option");
-            opt.value = "none";
-            opt.selected = true;
-            opt.disabled = true;
-            opt.hidden = true;
-            opt.innerText = "выберите группу";
-            selectGroup.appendChild(opt);
-            let groups = [ "T1", "T2", "T3", "T4", "T5", "T6" ];
-            for (let group of groups) {
-                opt = document.createElement("option");
-                opt.value = group;
-                opt.innerText = group;
-                selectGroup.appendChild(opt);
-            }
-            tdGroup.appendChild(selectGroup);
+            tdGroup.id = fuel.Name + " Group";
             row.appendChild(tdGroup);
-
-            tableFuels.appendChild(row);
+            let groupTask = new SubstanceGroupTask(tdGroup.id, fuel.Group);
+            groupTask.Init();
+            this.Tasks.push(groupTask);
         }
-    }
-
-    IsComplete() {
-        
     }
 }
