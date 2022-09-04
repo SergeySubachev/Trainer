@@ -7,12 +7,13 @@ window.onload = () => {
         new FrameUserName("divUserName"),
         new FrameAboutStation("divAboutStation"),
         new FrameAboutFuel("divAboutFuel"),
+        new FrameClassZone("divFrameClassZone"),
         new FrameResult("divResult")
     ];
     for (let i = 0; i < frames.length; i++) {
-        frames[i].Init();
         if (i > 0) frames[i].PrevFrame = frames[i - 1];
         if (i < frames.length - 1) frames[i].NextFrame = frames[i + 1];
+        frames[i].Init();
     }
 
     currentFrame = frames[0];

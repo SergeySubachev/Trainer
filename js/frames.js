@@ -102,6 +102,24 @@ class FrameAboutFuel extends Frame {
     }
 }
 
+class FrameClassZone extends Frame {
+    Tasks = [];
+
+    Init() {
+        let fz = "Технический регламент о требованиях пожарной безопасности";
+        let pue = "Правила устройства электроустановок";
+        let frame = this.PrevFrame;
+        while (!frame.hasOwnProperty("DateFromWorking")) {
+            frame = frame.PrevFrame;
+        }
+        let doc = pue;
+        if (frame.DateFromWorking >= new Date(2009, 5, 1)) doc = fz;
+        let task = new OneInManyTest("divClassZoneDocument", [ fz, pue ], doc);        
+        this.Tasks.push(task);
+        task.Init();
+    }
+}
+
 class FrameResult extends Frame {
     Show() {
         let frame = this.PrevFrame;
