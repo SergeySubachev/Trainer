@@ -92,4 +92,11 @@ class FrameAboutFuel extends Frame {
             this.Tasks.push(groupTask);
         }
     }
+
+    IsComplete() {
+        for (const task of this.Tasks) {
+            if (!task.IsComplete()) return false;
+        }
+        return true;
+    }
 }
