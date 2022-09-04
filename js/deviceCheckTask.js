@@ -46,9 +46,4 @@ class DeviceCheckTask extends ManyInManyTest {
             "не соответствует по группе ВОС"
         ], correctOptions);
     }
-
-    GetRandom(options = []) {
-        let i = Math.round(Math.random(options.length - 1));
-        return options[i];
-    }
 }
