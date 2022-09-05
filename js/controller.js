@@ -10,6 +10,7 @@ window.onload = () => {
         new FrameClassZone("divFrameClassZone"),
         new FrameCheckEngineAndStarter("divFrameCheckEngineAndStarter"),
         new FrameCheckLamp("divFrameCheckLamp"),
+        new FrameCheckCabel("divFrameCheckCabel"),
         new FrameResult("divResult")
     ];
     for (let i = 0; i < frames.length; i++) {

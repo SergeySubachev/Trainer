@@ -46,15 +46,24 @@ const OuterCover_н = new CabelPart("н", "негорючий (негорючи�
 const OuterCover_Г = new CabelPart("Г", "без наружного покрова");
 
 class CabelThreadTask extends OneInManyTest {
-    constructor(containerId, correctOption) {
-        let options = [Thread_М, Thread_А];
-        super(containerId, options, correctOption);
+    CorrectOptionObject;
+
+    constructor(containerId) {
+        let optionsObjects = [Thread_М, Thread_А];
+        let options = optionsObjects.map(function(item) {
+            return item.Description;
+        })
+        super(containerId, options, "");
+        this.CorrectOptionObject = this.GetRandom(optionsObjects);
+        this.CorrectOption = this.CorrectOptionObject.Description;
     }
 }
 
 class CabelIsolateTask extends OneInManyTest {
-    constructor(containerId, correctOption) {
-        let options = [
+    CorrectOptionObject;
+
+    constructor(containerId) {
+        let optionsObjects = [
             Isolate_Б,
             Isolate_Ц,
             Isolate__В,
@@ -65,13 +74,20 @@ class CabelIsolateTask extends OneInManyTest {
             Isolate_Пвс,
             Isolate_Р 
         ];
-        super(containerId, options, correctOption);
+        let options = optionsObjects.map(function(item) {
+            return item.Description;
+        })
+        super(containerId, options, "");
+        this.CorrectOptionObject = this.GetRandom(optionsObjects);
+        this.CorrectOption = this.CorrectOptionObject.Description;
     }
 }
 
 class CabelCoverTask extends OneInManyTest {
-    constructor(containerId, correctOption) {
-        let options = [
+    CorrectOptionObject;
+
+    constructor(containerId) {
+        let optionsObjects = [
             Cover_А,
             Cover_СТ,
             Cover_В,
@@ -79,25 +95,39 @@ class CabelCoverTask extends OneInManyTest {
             Cover_П,
             Cover_Н
         ];
-        super(containerId, options, correctOption);
+        let options = optionsObjects.map(function(item) {
+            return item.Description;
+        })
+        super(containerId, options, "");
+        this.CorrectOptionObject = this.GetRandom(optionsObjects);
+        this.CorrectOption = this.CorrectOptionObject.Description;
     }
 }
 
 class CabelBronTask extends OneInManyTest {
-    constructor(containerId, correctOption) {
-        let options = [
+    CorrectOptionObject;
+
+    constructor(containerId) {
+        let optionsObjects = [
             Bron_н,
             Bron_Б,
             Bron_П,
             Bron_К
         ];
-        super(containerId, options, correctOption);
+        let options = optionsObjects.map(function(item) {
+            return item.Description;
+        })
+        super(containerId, options, "");
+        this.CorrectOptionObject = this.GetRandom(optionsObjects);
+        this.CorrectOption = this.CorrectOptionObject.Description;
     }
 }
 
 class CabelUnderBronTask extends OneInManyTest {
-    constructor(containerId, correctOption) {
-        let options = [
+    CorrectOptionObject;
+
+    constructor(containerId) {
+        let optionsObjects = [
             UnderBron_н,
             UnderBron_л,
             UnderBron_2л,
@@ -105,20 +135,32 @@ class CabelUnderBronTask extends OneInManyTest {
             UnderBron_в,
             UnderBron_б
         ];
-        super(containerId, options, correctOption);
+        let options = optionsObjects.map(function(item) {
+            return item.Description;
+        })
+        super(containerId, options, "");
+        this.CorrectOptionObject = this.GetRandom(optionsObjects);
+        this.CorrectOption = this.CorrectOptionObject.Description;
     }
 }
 
 class CabelOuterCoverTask extends OneInManyTest {
-    constructor(containerId, correctOption) {
-        let options = [
+    CorrectOptionObject;
+
+    constructor(containerId) {
+        let optionsObjects = [
             OuterCover_норм,
             OuterCover_Шп,
             OuterCover_Шв,
             OuterCover_н,
             OuterCover_Г 
         ];
-        super(containerId, options, correctOption);
+        let options = optionsObjects.map(function(item) {
+            return item.Description;
+        })
+        super(containerId, options, "");
+        this.CorrectOptionObject = this.GetRandom(optionsObjects);
+        this.CorrectOption = this.CorrectOptionObject.Description;
     }
 }
 
