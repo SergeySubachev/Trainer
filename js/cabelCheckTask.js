@@ -57,6 +57,13 @@ class CabelThreadTask extends OneInManyTest {
         this.CorrectOptionObject = this.GetRandom(optionsObjects);
         this.CorrectOption = this.CorrectOptionObject.Description;
     }
+
+    // Init() {
+    //     super.Init();
+    //     let span = document.getElementById(this.ContainerId);
+    //     let selector = span.firstChild;
+    //     selector.style.maxWidth = "20px";
+    // }
 }
 
 class CabelIsolateTask extends OneInManyTest {
