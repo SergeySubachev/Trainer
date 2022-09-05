@@ -54,7 +54,7 @@ class CabelThreadTask extends OneInManyTest {
             return item.Description;
         })
         super(containerId, options, "");
-        this.CorrectOptionObject = this.GetRandom(optionsObjects);
+        this.CorrectOptionObject = GetRandom(optionsObjects);
         this.CorrectOption = this.CorrectOptionObject.Description;
     }
 
@@ -85,7 +85,7 @@ class CabelIsolateTask extends OneInManyTest {
             return item.Description;
         })
         super(containerId, options, "");
-        this.CorrectOptionObject = this.GetRandom(optionsObjects);
+        this.CorrectOptionObject = GetRandom(optionsObjects);
         this.CorrectOption = this.CorrectOptionObject.Description;
     }
 }
@@ -106,7 +106,7 @@ class CabelCoverTask extends OneInManyTest {
             return item.Description;
         })
         super(containerId, options, "");
-        this.CorrectOptionObject = this.GetRandom(optionsObjects);
+        this.CorrectOptionObject = GetRandom(optionsObjects);
         this.CorrectOption = this.CorrectOptionObject.Description;
     }
 }
@@ -125,7 +125,7 @@ class CabelBronTask extends OneInManyTest {
             return item.Description;
         })
         super(containerId, options, "");
-        this.CorrectOptionObject = this.GetRandom(optionsObjects);
+        this.CorrectOptionObject = GetRandom(optionsObjects);
         this.CorrectOption = this.CorrectOptionObject.Description;
     }
 }
@@ -146,7 +146,7 @@ class CabelUnderBronTask extends OneInManyTest {
             return item.Description;
         })
         super(containerId, options, "");
-        this.CorrectOptionObject = this.GetRandom(optionsObjects);
+        this.CorrectOptionObject = GetRandom(optionsObjects);
         this.CorrectOption = this.CorrectOptionObject.Description;
     }
 }
@@ -166,7 +166,7 @@ class CabelOuterCoverTask extends OneInManyTest {
             return item.Description;
         })
         super(containerId, options, "");
-        this.CorrectOptionObject = this.GetRandom(optionsObjects);
+        this.CorrectOptionObject = GetRandom(optionsObjects);
         this.CorrectOption = this.CorrectOptionObject.Description;
     }
 }

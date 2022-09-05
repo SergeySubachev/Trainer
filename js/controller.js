@@ -11,6 +11,7 @@ window.onload = () => {
         new FrameCheckEngineAndStarter("divFrameCheckEngineAndStarter"),
         new FrameCheckLamp("divFrameCheckLamp"),
         new FrameCheckCabel("divFrameCheckCabel"),
+        new FrameCheckWire("divFrameCheckCabel"),
         new FrameResult("divResult")
     ];
     for (let i = 0; i < frames.length; i++) {

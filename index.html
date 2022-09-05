@@ -26,6 +26,7 @@
     <script src="js/starterCheckTask.js"></script>
     <script src="js/lampCheckTask.js"></script>
     <script src="js/cabelCheckTask.js"></script>
+    <script src="js/wireCheckTask.js"></script>
     <script src="js/frames.js"></script>
     <script src="js/frameUserName.js"></script>
     <script src="js/frameAboutStation.js"></script>
@@ -33,6 +34,7 @@
     <script src="js/frameClassZone.js"></script>
     <script src="js/frameCheckDevice.js"></script>
     <script src="js/frameCheckCabel.js"></script>
+    <script src="js/frameCheckWire.js"></script>
     <script src="js/frameResult.js"></script>
     <script src="js/controller.js"></script>
 </head>
@@ -114,6 +116,14 @@
             <div>Броня &ndash; <span id="spanCabelBronTask"></span> &ndash; <span id="spanCabelBronCheckTask"></span></div>
             <div id="divCabelUnderBronTask" hidden>Подушка под броней &ndash; <span id="spanCabelUnderBronTask"></span></div>
             <div id="divCabelOuterCoverTask" hidden>Наружный покров &ndash; <span id="spanCabelOuterCoverTask"></span> &ndash; <span id="spanCabelOuterCoverCheckTask"></span></div>
+        </div>
+        <div id="divFrameCheckWire">
+            <h2>Проверка соответствия проводов осветительной сети классу зоны</h2>
+            <h3>Провод питания освещения ТРК марки <span id="spanWireMarking"></span>:</h3>
+            <div>Жилы &ndash; <span id="spanWireThreadTask"></span> &ndash; <span id="spanWireThreadCheckTask"></span></div>
+            <div>Изоляция &ndash; <span id="spanWireIsolateTask"></span> &ndash; <span id="spanWireIsolateCheckTask"></span></div>
+            <div>Особенности &ndash; <span id="spanWireFeatureTask"></span> &ndash; <span id="spanWireFeatureCheckTask"></span></div>
+            <div>Способ прокладки &ndash; <span id="spanWireLaying"></span><span id="spanWireLayingCheckTask"></span></div>
         </div>
         <div id="divResult" hidden>
             <h2>Результат</h2>

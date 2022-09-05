@@ -1,4 +1,9 @@
-﻿class Task {
+﻿function GetRandom(options = []) {
+    let i = Math.round(Math.random() * (options.length - 1));
+    return options[i];
+}
+
+class Task {
     ContainerId = "";
 
     Init() { }
@@ -9,11 +14,6 @@
 
     GetResult() {
         return 0;
-    }
-
-    GetRandom(options = []) {
-        let i = Math.round(Math.random(options.length - 1));
-        return options[i];
     }
 }
 
