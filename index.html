@@ -34,15 +34,16 @@
 
 <body>
     <div id="divMain" class="w3-container">
-        <div id="divIntro">
+        <div id="divIntro" class="w3-xlarge">
+            <div class="w3-container w3-round w3-margin-top w3-teal w3-center"><h2>Тренажер ПБЭл</h2></div>
             <p>Программа «<strong>Проверка соответствия производственного объекта требованиям пожарной безопасности</strong>» предназначена для моделирования экспертной, надзорной и инспекторско-аудиторской деятельности сотрудника Государственной противопожарной службы МЧС России по проверке соответствия производственного объекта требованиям пожарной безопасности, в качестве которого принята автозаправочная станция (АЗС).</p>
             <p>Цель работы с программой – закрепление теоретических знаний и практических умений по анализу пожарной опасности оборудования, установленного на АЗС, проведению оценки соответствия требованиям нормативных документов в области пожарной безопасности.</p>          
         </div>
-        <div id="divUserName" hidden>
-            <h2>Введите фимилию и инициалы</h2>
-            <i class="w3-xxlarge fa fa-user"></i>
+        <div id="divUserName" class="w3-xlarge">
+            <div class="w3-container w3-round w3-margin-top w3-teal w3-center"><h2>Регистрация</h2></div>
+            <div>Введите фимилию и инициалы</div>
             <input id='tbUserName' type='text' class='form-control' placeholder='ФИО'>
-            <h2>Номер группы</h2>
+            <h3>Номер группы</h3>
             <select id='selectGroup'>
                 <option value="none" selected disabled hidden>выберите группу...</option>
                 <option>ПБ-031</option>
@@ -57,51 +58,58 @@
                 <option>Группа ФЗОППК</option>
             </select>
         </div>
-        <div id="divAboutStation" hidden>
-            <h2>Ознакомление с технологическим процессом и характеристикой АЗС</h2>..
-            <h3>Сущность технологического процесса автозаправочной станции</h3>..
-            <h3>Характеристика объекта</h3>..
+        <div id="divAboutStation" class="w3-large">
+            <div class="w3-container w3-round w3-margin-top w3-teal w3-center"><h2>Ознакомление с технологическим процессом и характеристикой АЗС</h2></div>
+            <h3>Сущность технологического процесса автозаправочной станции</h3>
+            <div>Сущность технологического процесса автозаправочной станции</div>
+            <h3>Характеристика объекта</h3>
+            <div>Характеристика объекта</div>           
             <h3 id="dateFrom">Дата ввода в эксплуатацию: 11.11.11</h3>
         </div>
-        <div id="divAboutFuel" hidden>
-            <h2>Определите категорию и группу взрывоопасной смеси видов топлива, обращающихся в технологическом процессе АЗС</h2>
+        <div id="divAboutFuel">
+            <div class="w3-container w3-round w3-margin-top w3-teal w3-center"><h2>Определите категорию и группу взрывоопасной смеси видов топлива, обращающихся в технологическом процессе АЗС</h2></div>
             <h3>Пожароопасные свойства веществ</h3>
-            <table id="tableFuels">
-                <tr>
-                    <th rowspan="2">Наименование вещества</th>
-                    <th rowspan="2">Темпатура вспышки</th>
-                    <th rowspan="2">Температура самовоспламенения</th>
-                    <th colspan="2">Концентрационные пределы воспламенения</th>
-                    <th rowspan="2">Категория ВОС</th>
-                    <th rowspan="2">Группа ВОС</th>
-                </tr>
-                <tr>
-                    <th>нижний</th>
-                    <th>верхний</th>
-                </tr>
+            <table id="tableFuels" class="w3-table w3-bordered w3-border">
+                <head>
+                    <tr>
+                        <th rowspan="2" class="w3-center">Наименование вещества</th>
+                        <th rowspan="2" class="w3-center">Темпатура вспышки</th>
+                        <th rowspan="2" class="w3-center">Температура самовоспламенения</th>
+                        <th colspan="2" class="w3-center">Концентрационные пределы воспламенения</th>
+                        <th rowspan="2" class="w3-center">Категория ВОС</th>
+                        <th rowspan="2" class="w3-center">Группа ВОС</th>
+                    </tr>
+                    <tr>
+                        <th class="w3-center">нижний</th>
+                        <th class="w3-center">верхний</th>
+                    </tr>
+                </head>
             </table>
         </div>
-        <div id="divFrameClassZone" hidden>
-            <h2>Нормативная оценка класса зоны АЗС</h2>
-            <h3>Выберите, по какому нормативному документу следует проводить оценку класса зоны АЗС:</h3>
-            <div id="divClassZoneDocument"></div>
-            <h3>Территория АЗС относится к зоне:</h3>
-            <div id="divClassZone"></div>
+        <div id="divFrameClassZone" class="w3-large">
+            <div class="w3-container w3-round w3-margin-top w3-teal w3-center"><h2>Нормативная оценка класса зоны АЗС</h2></div>
+            <div class="w3-container w3-margin-top">
+                <div>Выберите, по какому нормативному документу следует проводить оценку класса зоны АЗС:</div>
+                <div id="divClassZoneDocument"></div>
+            </div>
+            <div class="w3-container w3-margin-top">
+                <div>Территория АЗС относится к зоне: <span id="divClassZone"></span></div>                
+            </div>
         </div>
-        <div id="divFrameCheckEngineAndStarter" hidden>
-            <h2>Проверка соответствия электродвигателя и магнитного пускателя, установленного на ТРК, классу зоны, категории и группе взрывоопасной смеси</h2>
+        <div id="divFrameCheckEngineAndStarter">
+            <div class="w3-container w3-round w3-margin-top w3-teal w3-center"><h2>Проверка соответствия электродвигателя и магнитного пускателя, установленного на ТРК, классу зоны, категории и группе взрывоопасной смеси</h2></div>
             <h3>Двигатель насоса ТРК с маркировкой по взрывозащите <span id="spanEngineMarking"></span>:</h3>
             <div id="divCheckEngine"></div>
             <h3>Магнитный пускатель с маркировкой по взрывозащите <span id="spanStarterMarking"></span>:</h3>
             <div id="divCheckStarter"></div>
         </div>
-        <div id="divFrameCheckLamp" hidden>
-            <h2>Проверка соответствия стационарных светильников, установленных в навесе над ТРК, классу зоны, категории и группе взрывоопасной смеси</h2>
+        <div id="divFrameCheckLamp">
+            <div class="w3-container w3-round w3-margin-top w3-teal w3-center"><h2>Проверка соответствия стационарных светильников, установленных в навесе над ТРК, классу зоны, категории и группе взрывоопасной смеси</h2></div>
             <h3>Стационарный светильник с маркировкой по взрывозащите <span id="spanLampMarking"></span>:</h3>
             <div id="divCheckLamp"></div>
         </div>
-        <div id="divFrameCheckCabel" hidden>
-            <h2>Проверка соответствия кабелей силовой сети классу зоны</h2>
+        <div id="divFrameCheckCabel">
+            <div class="w3-container w3-round w3-margin-top w3-teal w3-center"><h2>Проверка соответствия кабелей силовой сети классу зоны</h2></div>
             <h3>Кабель питания ТРК марки <span id="spanCabelMarking"></span> (проложен в трубе):</h3>
             <div>Жилы &ndash; <span id="spanCabelThreadTask"></span> &ndash; <span id="spanCabelThreadCheckTask"></span></div>
             <div>Изоляция &ndash; <span id="spanCabelIsolateTask"></span> &ndash; <span id="spanCabelIsolateCheckTask"></span></div>
@@ -110,16 +118,16 @@
             <div id="divCabelUnderBronTask" hidden>Подушка под броней &ndash; <span id="spanCabelUnderBronTask"></span></div>
             <div id="divCabelOuterCoverTask" hidden>Наружный покров &ndash; <span id="spanCabelOuterCoverTask"></span> &ndash; <span id="spanCabelOuterCoverCheckTask"></span></div>
         </div>
-        <div id="divFrameCheckWire" hidden>
-            <h2>Проверка соответствия проводов осветительной сети классу зоны</h2>
+        <div id="divFrameCheckWire">
+            <div class="w3-container w3-round w3-margin-top w3-teal w3-center"><h2>Проверка соответствия проводов осветительной сети классу зоны</h2></div>
             <h3>Провод питания освещения ТРК марки <span id="spanWireMarking"></span>:</h3>
             <div>Жилы &ndash; <span id="spanWireThreadTask"></span> &ndash; <span id="spanWireThreadCheckTask"></span></div>
             <div>Изоляция &ndash; <span id="spanWireIsolateTask"></span> &ndash; <span id="spanWireIsolateCheckTask"></span></div>
             <div>Особенности &ndash; <span id="spanWireFeatureTask"></span> &ndash; <span id="spanWireFeatureCheckTask"></span></div>
             <div>Способ прокладки &ndash; <span id="spanWireLaying"></span><span id="spanWireLayingCheckTask"></span></div>
         </div>
-        <div id="divResult" hidden>
-            <h2>Результат</h2>
+        <div id="divResult">
+            <div class="w3-container w3-round w3-margin-top w3-teal w3-center"><h2>Результат</h2></div>
             <h3 id="resultUserName"></h3>
             <h3 id="resultUserGroup"></h3>
             <h3 id="resultPercent"></h3>
@@ -127,6 +135,10 @@
         <hr>
         <button id='btnNext' class='w3-button w3-round w3-teal' onclick="btnNextClick()">Далее</button>
     </div>
+    <footer class="w3-container w3-margin-top w3-padding w3-blue-grey">
+        <span class="w3-hover-blue"><a href="">ФЗ-123</a></span>
+        <span>Flex? Grid?</span>
+    </footer>
 </body>
 
 </html>

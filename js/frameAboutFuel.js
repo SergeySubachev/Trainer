@@ -15,22 +15,27 @@ class FrameAboutFuel extends Frame {
 
             let tdTvsp = document.createElement("td");
             tdTvsp.innerHTML = fuel.Tvsp;
+            tdTvsp.classList.add("w3-center");
             row.appendChild(tdTvsp);
 
             let tdTsv = document.createElement("td");
             tdTsv.innerHTML = fuel.Tsv;
+            tdTsv.classList.add("w3-center");
             row.appendChild(tdTsv);
 
             let tdClow = document.createElement("td");
             tdClow.innerHTML = fuel.Clow;
+            tdClow.classList.add("w3-center");
             row.appendChild(tdClow);
 
             let tdHigh = document.createElement("td");
             tdHigh.innerHTML = fuel.Chigh;
+            tdHigh.classList.add("w3-center");
             row.appendChild(tdHigh);
 
             let tdCategory = document.createElement("td");
             tdCategory.id = fuel.Name + " Category";
+            tdCategory.classList.add("w3-center");
             row.appendChild(tdCategory);
             let categoryTask = new SubstanceCategoryTask(tdCategory.id, fuel.Category.Name);
             categoryTask.Init();
@@ -38,6 +43,7 @@ class FrameAboutFuel extends Frame {
 
             let tdGroup = document.createElement("td");
             tdGroup.id = fuel.Name + " Group";
+            tdGroup.classList.add("w3-center");
             row.appendChild(tdGroup);
             let groupTask = new SubstanceGroupTask(tdGroup.id, fuel.Group.Name);
             groupTask.Init();
