@@ -18,7 +18,7 @@ class FrameCheckCabel extends Frame {
 
         //проверка       
         let isSatisfy = "соответствует";
-        let isNotSatisfy = "не соответствует";       
+        let isNotSatisfy = "не соответствует";
         let cabelThreadCheckTask = new CabelPartCheckTask("spanCabelThreadCheckTask", isSatisfy);
         this.Tasks.push(cabelThreadCheckTask);
 

@@ -121,9 +121,12 @@ class WireFeatureTask extends OneInManyTest {
     }
 }
 
+const WireLaying1 = "на скобах";
+const WireLaying2 = "на тросах";
+const WireLaying3 = "в трубе";
 
-// class CabelPartCheckTask extends OneInManyTest {
-//     constructor(containerId, correctOption) {
-//         super(containerId, ["соответствует", "не соответствует"], correctOption);
-//     }
-// }
+class WirePartCheckTask extends OneInManyTest {
+    constructor(containerId, correctOption) {
+        super(containerId, ["соответствует", "не соответствует"], correctOption);
+    }
+}
