@@ -111,12 +111,28 @@
         <div id="divFrameCheckCabel">
             <div class="w3-container w3-round w3-margin-top w3-teal w3-center"><h2>Проверка соответствия кабелей силовой сети классу зоны</h2></div>
             <h3>Кабель питания ТРК марки <span id="spanCabelMarking"></span> (проложен в трубе):</h3>
-            <div>Жилы &ndash; <span id="spanCabelThreadTask"></span> &ndash; <span id="spanCabelThreadCheckTask"></span></div>
-            <div>Изоляция &ndash; <span id="spanCabelIsolateTask"></span> &ndash; <span id="spanCabelIsolateCheckTask"></span></div>
-            <div>Оболочка &ndash; <span id="spanCabelCoverTask"></span> &ndash; <span id="spanCabelCoverCheckTask"></span></div>
-            <div>Броня &ndash; <span id="spanCabelBronTask"></span> &ndash; <span id="spanCabelBronCheckTask"></span></div>
-            <div id="divCabelUnderBronTask" hidden>Подушка под броней &ndash; <span id="spanCabelUnderBronTask"></span></div>
-            <div id="divCabelOuterCoverTask" hidden>Наружный покров &ndash; <span id="spanCabelOuterCoverTask"></span> &ndash; <span id="spanCabelOuterCoverCheckTask"></span></div>
+            <table class="w3-table w3-bordered">
+                <tbody>
+                    <tr>
+                        <td>Жилы</td><td><span id="spanCabelThreadTask"></span></td><td><span id="spanCabelThreadCheckTask"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Изоляция</td><td><span id="spanCabelIsolateTask"></span></td><td><span id="spanCabelIsolateCheckTask"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Оболочка</td><td><span id="spanCabelCoverTask"></span></td><td><span id="spanCabelCoverCheckTask"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Броня</td><td><span id="spanCabelBronTask"></span></td><td><span id="spanCabelBronCheckTask"></span></td>
+                    </tr>
+                    <tr id="divCabelUnderBronTask" hidden>
+                        <td>Подушка под броней</td><td colspan="2"><span id="spanCabelUnderBronTask"></span></td>
+                    </tr>
+                    <tr id="divCabelOuterCoverTask" hidden>
+                        <td>Наружный покров</td><td><span id="spanCabelOuterCoverTask"></span></td><td><span id="spanCabelOuterCoverCheckTask"></span></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <div id="divFrameCheckWire">
             <div class="w3-container w3-round w3-margin-top w3-teal w3-center"><h2>Проверка соответствия проводов осветительной сети классу зоны</h2></div>
