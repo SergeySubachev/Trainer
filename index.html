@@ -39,7 +39,7 @@
 
 <body>
     <div id="divMain" class="w3-container">
-        <div id="divIntro" hidden>
+        <div id="divIntro">
             <p>Программа «<strong>Проверка соответствия производственного объекта требованиям пожарной безопасности</strong>» предназначена для моделирования экспертной, надзорной и инспекторско-аудиторской деятельности сотрудника Государственной противопожарной службы МЧС России по проверке соответствия производственного объекта требованиям пожарной безопасности, в качестве которого принята автозаправочная станция (АЗС).</p>
             <p>Цель работы с программой – закрепление теоретических знаний и практических умений по анализу пожарной опасности оборудования, установленного на АЗС, проведению оценки соответствия требованиям нормативных документов в области пожарной безопасности.</p>          
         </div>
@@ -107,13 +107,13 @@
         </div>
         <div id="divFrameCheckCabel">
             <h2>Проверка соответствия кабелей силовой сети классу зоны</h2>
-            <h3>Кабель питания ТРК марки <span id="spanCabelMarking"></span>:</h3>
-            <div>Жилы &ndash; <span id="spanCabelThreadTask"></span></div>
-            <div>Изоляция &ndash; <span id="spanCabelIsolateTask"></span></div>
-            <div>Оболочка &ndash; <span id="spanCabelCoverTask"></span></div>
-            <div>Броня &ndash; <span id="spanCabelBronTask"></span></div>
+            <h3>Кабель питания ТРК марки <span id="spanCabelMarking"></span> (проложен в трубе):</h3>
+            <div>Жилы &ndash; <span id="spanCabelThreadTask"></span> &ndash; <span id="spanCabelThreadCheckTask"></span></div>
+            <div>Изоляция &ndash; <span id="spanCabelIsolateTask"></span> &ndash; <span id="spanCabelIsolateCheckTask"></span></div>
+            <div>Оболочка &ndash; <span id="spanCabelCoverTask"></span> &ndash; <span id="spanCabelCoverCheckTask"></span></div>
+            <div>Броня &ndash; <span id="spanCabelBronTask"></span> &ndash; <span id="spanCabelBronCheckTask"></span></div>
             <div id="divCabelUnderBronTask" hidden>Подушка под броней &ndash; <span id="spanCabelUnderBronTask"></span></div>
-            <div id="divCabelOuterCoverTask" hidden>Наружный покров &ndash; <span id="spanCabelOuterCoverTask"></span></div>
+            <div id="divCabelOuterCoverTask" hidden>Наружный покров &ndash; <span id="spanCabelOuterCoverTask"></span> &ndash; <span id="spanCabelOuterCoverCheckTask"></span></div>
         </div>
         <div id="divResult" hidden>
             <h2>Результат</h2>

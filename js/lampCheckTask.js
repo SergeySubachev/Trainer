@@ -23,17 +23,17 @@ class LampCheckTask extends DeviceCheckTask {
         this.DeviceTempClass = this.GetRandom([DEVICETEMPCLASS_T1, DEVICETEMPCLASS_T2, DEVICETEMPCLASS_T3, DEVICETEMPCLASS_T4, DEVICETEMPCLASS_T5, DEVICETEMPCLASS_T6]);
 
         let correctOptions = [];
-        let allSaticfy = true;
+        let allSatisfy = true;
         //классу зоны по-любому соответсвует
         if (this.DeviceGroup.Value < substanceCategory.Value) {
             correctOptions.push("не соответствует по категории ВОС");
-            allSaticfy = false;
+            allSatisfy = false;
         }
         if (this.DeviceTempClass.Value < substanceGroup.Value) {
             correctOptions.push("не соответствует по группе ВОС");
-            allSaticfy = false;
+            allSatisfy = false;
         }
-        if (allSaticfy) {
+        if (allSatisfy) {
             correctOptions.push("соответствует");
         }
         this.CorrectOptions = correctOptions;

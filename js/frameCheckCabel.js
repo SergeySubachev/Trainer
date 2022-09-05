@@ -2,9 +2,7 @@ class FrameCheckCabel extends Frame {
     Tasks = [];
 
     Init() {
-        //создать все CabelPartCheckTask. Перед этим выбирать запчасти
-        //в итоге получится маркировка, создать тесты по маркировке
-
+        //маркировка
         let cabelThreadTask = new CabelThreadTask("spanCabelThreadTask");
         let sThread = cabelThreadTask.CorrectOptionObject.Marks;
         let cabelIsolateTask = new CabelIsolateTask("spanCabelIsolateTask");
@@ -18,15 +16,36 @@ class FrameCheckCabel extends Frame {
 
         this.Tasks = [cabelThreadTask, cabelIsolateTask, cabelCoverTask, cabelBronTask];
 
+        //проверка       
+        let isSatisfy = "соответствует";
+        let isNotSatisfy = "не соответствует";       
+        let cabelThreadCheckTask = new CabelPartCheckTask("spanCabelThreadCheckTask", isSatisfy);
+        this.Tasks.push(cabelThreadCheckTask);
+
+        let PE = [Isolate_П, Isolate_Пс, Isolate_Пв, Isolate_Пвс];
+        let isolateSatisfy = PE.includes(cabelIsolateTask.CorrectOptionObject) ? isNotSatisfy : isSatisfy;
+        let cabelIsolateCheckTask = new CabelPartCheckTask("spanCabelIsolateCheckTask", isolateSatisfy);
+        this.Tasks.push(cabelIsolateCheckTask);
+
+        let coverSatisfy = cabelCoverTask.CorrectOptionObject == Cover_П ? isNotSatisfy : isSatisfy;
+        let cabelCoverCheckTask = new CabelPartCheckTask("spanCabelCoverCheckTask", coverSatisfy);
+        this.Tasks.push(cabelCoverCheckTask);
+
         if (sBron != "") {
             let cabelUnderBronTask = new CabelUnderBronTask("spanCabelUnderBronTask");
             sUnderBron = cabelUnderBronTask.CorrectOptionObject.Marks;
+            document.getElementById("divCabelUnderBronTask").hidden = false;
+            this.Tasks.push(cabelUnderBronTask);
+
             let cabelOuterCoverTask = new CabelOuterCoverTask("spanCabelOuterCoverTask");
             sOuterCover = cabelOuterCoverTask.CorrectOptionObject.Marks;
-            document.getElementById("divCabelUnderBronTask").hidden = false;
             document.getElementById("divCabelOuterCoverTask").hidden = false;
-            this.Tasks.push(cabelUnderBronTask);
             this.Tasks.push(cabelOuterCoverTask);
+
+            //проложен в трубе - поэтому:
+            let outerCoverSatisfy = isSatisfy;
+            let сabelOuterCoverCheckTask = new CabelPartCheckTask("spanCabelOuterCoverCheckTask", outerCoverSatisfy);
+            this.Tasks.push(сabelOuterCoverCheckTask);
         }
 
         let marking = "";
