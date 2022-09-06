@@ -4,6 +4,11 @@ class ClassZoneDocumentTask extends OneInManyTest {
     constructor(containerId, correctOption) {
         super(containerId, [PUE, FZ123], correctOption);
     }
+
+    Init() {
+        super.Init();
+        document.getElementById("divClassZoneDocument").firstChild.classList.add("w3-select");
+    }
 }
 
 class ClassZoneTask extends OneInManyTest {

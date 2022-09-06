@@ -83,6 +83,7 @@ class ManyInManyTest extends Task {
             let checkbox = document.createElement("input");
             checkbox.type = "checkbox";
             checkbox.value = option;
+            checkbox.classList.add("w3-check");
             label.appendChild(checkbox);
             let span = document.createElement("span");
             span.innerText = option;
