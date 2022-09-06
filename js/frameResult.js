@@ -18,7 +18,7 @@ class FrameResult extends Frame {
             }
             frame = frame.NextFrame;
         }
-        let percent = userScore / allScore * 100;
+        let percent = Math.round(userScore / allScore * 100);
         document.getElementById("resultPercent").innerText = `Результат: ${userScore} из ${allScore} (${percent}%)`;
 
         super.Show();
