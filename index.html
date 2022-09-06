@@ -137,10 +137,22 @@
         <div id="divFrameCheckWire">
             <div class="w3-container w3-round w3-margin-top w3-teal w3-center"><h2>Проверка соответствия проводов осветительной сети классу зоны</h2></div>
             <h3>Провод питания освещения ТРК марки <span id="spanWireMarking"></span>:</h3>
-            <div>Жилы &ndash; <span id="spanWireThreadTask"></span> &ndash; <span id="spanWireThreadCheckTask"></span></div>
-            <div>Изоляция &ndash; <span id="spanWireIsolateTask"></span> &ndash; <span id="spanWireIsolateCheckTask"></span></div>
-            <div>Особенности &ndash; <span id="spanWireFeatureTask"></span> &ndash; <span id="spanWireFeatureCheckTask"></span></div>
-            <div>Способ прокладки &ndash; <span id="spanWireLaying"></span><span id="spanWireLayingCheckTask"></span></div>
+            <table class="w3-table w3-bordered">
+                <tbody>
+                    <tr>
+                        <td>Жилы</td><td><span id="spanWireThreadTask"></span></td><td><span id="spanWireThreadCheckTask"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Изоляция</td><td><span id="spanWireIsolateTask"></span></td><td><span id="spanWireIsolateCheckTask"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Особенности</td><td><span id="spanWireFeatureTask"></span></td><td><span id="spanWireFeatureCheckTask"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Способ прокладки</td><td><span id="spanWireLaying"></span></td><td><span id="spanWireLayingCheckTask"></span></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <div id="divResult">
             <div class="w3-container w3-round w3-margin-top w3-teal w3-center"><h2>Результат</h2></div>

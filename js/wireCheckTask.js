@@ -82,6 +82,11 @@ class WireThreadTask extends OneInManyTest {
         let options = [WireThread_М.Description, WireThread_А.Description];
         super(containerId, options, correctOption);
     }
+
+    Init() {
+        super.Init();
+        document.getElementById(this.ContainerId).firstChild.classList.add("w3-select");
+    }
 }
 
 class WireIsolateTask extends OneInManyTest {
@@ -92,6 +97,11 @@ class WireIsolateTask extends OneInManyTest {
             WireIsolate_Р.Description
         ];
         super(containerId, options, correctOption);
+    }
+
+    Init() {
+        super.Init();
+        document.getElementById(this.ContainerId).firstChild.classList.add("w3-select");
     }
 }
 
@@ -119,6 +129,11 @@ class WireFeatureTask extends OneInManyTest {
         ];
         super(containerId, options, correctOption);
     }
+
+    Init() {
+        super.Init();
+        document.getElementById(this.ContainerId).firstChild.classList.add("w3-select");
+    }
 }
 
 const WireLaying1 = "на скобах";
@@ -128,5 +143,10 @@ const WireLaying3 = "в трубе";
 class WirePartCheckTask extends OneInManyTest {
     constructor(containerId, correctOption) {
         super(containerId, ["соответствует", "не соответствует"], correctOption);
+    }
+
+    Init() {
+        super.Init();
+        document.getElementById(this.ContainerId).firstChild.classList.add("w3-select");
     }
 }
