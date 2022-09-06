@@ -7,7 +7,7 @@ class ClassZoneDocumentTask extends OneInManyTest {
 
     Init() {
         super.Init();
-        document.getElementById("divClassZoneDocument").firstChild.classList.add("w3-select");
+        document.getElementById(this.ContainerId).firstChild.classList.add("w3-select");
     }
 }
 
