@@ -58,12 +58,11 @@ class CabelThreadTask extends OneInManyTest {
         this.CorrectOption = this.CorrectOptionObject.Description;
     }
 
-    // Init() {
-    //     super.Init();
-    //     let span = document.getElementById(this.ContainerId);
-    //     let selector = span.firstChild;
-    //     selector.style.maxWidth = "20px";
-    // }
+    Init() {
+        super.Init();
+        document.getElementById(this.ContainerId).firstChild.classList.add("w3-select");
+        //     selector.style.maxWidth = "20px";
+    }
 }
 
 class CabelIsolateTask extends OneInManyTest {
@@ -88,6 +87,12 @@ class CabelIsolateTask extends OneInManyTest {
         this.CorrectOptionObject = GetRandom(optionsObjects);
         this.CorrectOption = this.CorrectOptionObject.Description;
     }
+
+    Init() {
+        super.Init();
+        document.getElementById(this.ContainerId).firstChild.classList.add("w3-select");
+        //     selector.style.maxWidth = "20px";
+    }
 }
 
 class CabelCoverTask extends OneInManyTest {
@@ -109,6 +114,12 @@ class CabelCoverTask extends OneInManyTest {
         this.CorrectOptionObject = GetRandom(optionsObjects);
         this.CorrectOption = this.CorrectOptionObject.Description;
     }
+
+    Init() {
+        super.Init();
+        document.getElementById(this.ContainerId).firstChild.classList.add("w3-select");
+        //     selector.style.maxWidth = "20px";
+    }
 }
 
 class CabelBronTask extends OneInManyTest {
@@ -127,6 +138,12 @@ class CabelBronTask extends OneInManyTest {
         super(containerId, options, "");
         this.CorrectOptionObject = GetRandom(optionsObjects);
         this.CorrectOption = this.CorrectOptionObject.Description;
+    }
+
+    Init() {
+        super.Init();
+        document.getElementById(this.ContainerId).firstChild.classList.add("w3-select");
+        //     selector.style.maxWidth = "20px";
     }
 }
 
@@ -149,6 +166,12 @@ class CabelUnderBronTask extends OneInManyTest {
         this.CorrectOptionObject = GetRandom(optionsObjects);
         this.CorrectOption = this.CorrectOptionObject.Description;
     }
+
+    Init() {
+        super.Init();
+        document.getElementById(this.ContainerId).firstChild.classList.add("w3-select");
+        //     selector.style.maxWidth = "20px";
+    }
 }
 
 class CabelOuterCoverTask extends OneInManyTest {
@@ -169,10 +192,22 @@ class CabelOuterCoverTask extends OneInManyTest {
         this.CorrectOptionObject = GetRandom(optionsObjects);
         this.CorrectOption = this.CorrectOptionObject.Description;
     }
+
+    Init() {
+        super.Init();
+        document.getElementById(this.ContainerId).firstChild.classList.add("w3-select");
+        //     selector.style.maxWidth = "20px";
+    }
 }
 
 class CabelPartCheckTask extends OneInManyTest {
     constructor(containerId, correctOption) {
         super(containerId, ["соответствует", "не соответствует"], correctOption);
+    }
+
+    Init() {
+        super.Init();
+        document.getElementById(this.ContainerId).firstChild.classList.add("w3-select");
+        //     selector.style.maxWidth = "20px";
     }
 }
