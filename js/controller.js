@@ -24,16 +24,24 @@ window.onload = () => {
 
     currentFrame = frames[0];
     currentFrame.Show();
+
+    document.getElementById("navButtons").hidden = false;
 };
 
 window.onresize = () => {
+    let imgIds = ["imgIntro", "imgUserName"];
+    let images = imgIds.map((item) => {
+        return document.getElementById(item);
+    })
+
     let width = window.innerWidth;
-    if (width > 1000) {
-        let img = document.getElementById("imgPict1");
-        img.width = Math.round(width / 3);
-        img.hidden = false;
-    } else {
-        document.getElementById("imgPict1").hidden = true;
+    for (const img of images) {
+        if (width > 1000) {
+            img.width = Math.round(width / 3);
+            img.hidden = false;
+        } else {
+            img.hidden = true;
+        }
     }
 }
 

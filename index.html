@@ -35,46 +35,65 @@
     <div id="divMain" class="w3-container">
         <!-- <div id="divIntro" class="w3-xlarge" style="background-image: url('./img/pict1.jpg'); background-size: cover; background-attachment: fixed;"> -->
         <div id="divIntro" class="w3-xlarge">
-            <div class="w3-container w3-round w3-margin-top w3-teal w3-center"><h2>Тренажер ПБЭл</h2></div>
+            <div class="w3-container w3-round w3-margin-top w3-teal w3-center">
+                <h2>Тренажер ПБЭл</h2>
+            </div>
             <div class="w3-cell-row">
                 <div class="w3-cell w3-cell-middle">
-                    <img id="imgPict1" src="img/pict1.jpg"/>
-                </div>           
+                    <img id="imgIntro" src="img/pict1.jpg" />
+                </div>
                 <div class="w3-cell w3-cell-middle">
                     <p>Программа «<strong>Проверка соответствия производственного объекта требованиям пожарной безопасности</strong>» предназначена для моделирования экспертной, надзорной и инспекторско-аудиторской деятельности сотрудника Государственной противопожарной службы МЧС России по проверке соответствия производственного объекта требованиям пожарной безопасности, в качестве которого принята автозаправочная станция (АЗС).</p>
-                    <p>Цель работы с программой – закрепление теоретических знаний и практических умений по анализу пожарной опасности оборудования, установленного на АЗС, проведению оценки соответствия требованиям нормативных документов в области пожарной безопасности.</p>          
+                    <p>Цель работы с программой – закрепление теоретических знаний и практических умений по анализу пожарной опасности оборудования, установленного на АЗС, проведению оценки соответствия требованиям нормативных документов в области пожарной безопасности.</p>
                 </div>
             </div>
         </div>
         <div id="divUserName" class="w3-xlarge" hidden>
-            <div class="w3-container w3-round w3-margin-top w3-teal w3-center"><h2>Регистрация</h2></div>
-            <div>Введите фимилию и инициалы</div>
-            <input id='tbUserName' type='text' class='form-control w3-input w3-border' placeholder='ФИО'>
-            <h3>Номер группы</h3>
-            <select id='selectGroup' class="w3-select">
-                <option value="none" selected disabled hidden>выберите группу...</option>
-                <option>ПБ-031</option>
-                <option>ПБ-032</option>
-                <option>ПБв-031</option>
-                <option>ТБ-033</option>
-                <option>ТБ-034</option>
-                <option>ТБ-035</option>
-                <option>ТБ-036</option>
-                <option>ТБ-037</option>
-                <option>ТБв-031</option>
-                <option>Группа ФЗОППК</option>
-            </select>
+            <div class="w3-container w3-round w3-margin-top w3-teal w3-center">
+                <h2>Регистрация</h2>
+            </div>
+            <div>
+                <div class="w3-cell w3-cell-middle">
+                    <img id="imgUserName" src="img/pict1.jpg" />
+                </div>
+                <div class="w3-cell w3-cell-middle">
+                    <div class="w3-container w3-padding">
+                        <div>Введите фимилию и инициалы</div>
+                        <input id='tbUserName' type='text' class='form-control w3-input w3-border' placeholder='ФИО'>
+                    </div>
+                    <div class="w3-container w3-padding">
+                        <div>Номер группы</div>
+                        <select id='selectGroup' class="w3-select">
+                            <option value="none" selected disabled hidden>выберите группу...</option>
+                            <option>ПБ-031</option>
+                            <option>ПБ-032</option>
+                            <option>ПБв-031</option>
+                            <option>ТБ-033</option>
+                            <option>ТБ-034</option>
+                            <option>ТБ-035</option>
+                            <option>ТБ-036</option>
+                            <option>ТБ-037</option>
+                            <option>ТБв-031</option>
+                            <option>Группа ФЗОППК</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="divAboutStation" class="w3-large" hidden>
-            <div class="w3-container w3-round w3-margin-top w3-teal w3-center"><h2>Ознакомление с технологическим процессом и характеристикой АЗС</h2></div>
+            <div class="w3-container w3-round w3-margin-top w3-teal w3-center">
+                <h2>Ознакомление с технологическим процессом и характеристикой АЗС</h2>
+            </div>
             <h3>Сущность технологического процесса автозаправочной станции</h3>
             <div>Сущность технологического процесса автозаправочной станции</div>
             <h3>Характеристика объекта</h3>
-            <div>Характеристика объекта</div>           
+            <div>Характеристика объекта</div>
             <h3 id="dateFrom">Дата ввода в эксплуатацию: 11.11.11</h3>
         </div>
         <div id="divAboutFuel" hidden>
-            <div class="w3-container w3-round w3-margin-top w3-teal w3-center"><h2>Определите категорию и группу взрывоопасной смеси видов топлива, обращающихся в технологическом процессе АЗС</h2></div>
+            <div class="w3-container w3-round w3-margin-top w3-teal w3-center">
+                <h2>Определите категорию и группу взрывоопасной смеси видов топлива, обращающихся в технологическом процессе АЗС</h2>
+            </div>
             <h3>Пожароопасные свойства веществ</h3>
             <table id="tableFuels" class="w3-table w3-bordered w3-border">
                 <head>
@@ -94,85 +113,119 @@
             </table>
         </div>
         <div id="divFrameClassZone" class="w3-large" hidden>
-            <div class="w3-container w3-round w3-margin-top w3-teal w3-center"><h2>Нормативная оценка класса зоны АЗС</h2></div>
+            <div class="w3-container w3-round w3-margin-top w3-teal w3-center">
+                <h2>Нормативная оценка класса зоны АЗС</h2>
+            </div>
             <div class="w3-container w3-margin-top">
                 <div>Выберите, по какому нормативному документу следует проводить оценку класса зоны АЗС:</div>
                 <div id="divClassZoneDocument"></div>
             </div>
             <div class="w3-container w3-margin-top">
-                <div>Территория АЗС относится к зоне: <span id="divClassZone"></span></div>                
+                <div>Территория АЗС относится к зоне: <span id="divClassZone"></span></div>
             </div>
         </div>
         <div id="divFrameCheckEngineAndStarter" hidden>
-            <div class="w3-container w3-round w3-margin-top w3-teal w3-center"><h2>Проверка соответствия электродвигателя и магнитного пускателя, установленного на ТРК, классу зоны, категории и группе взрывоопасной смеси</h2></div>
+            <div class="w3-container w3-round w3-margin-top w3-teal w3-center">
+                <h2>Проверка соответствия электродвигателя и магнитного пускателя, установленного на ТРК, классу зоны, категории и группе взрывоопасной смеси</h2>
+            </div>
             <h3>Двигатель насоса ТРК с маркировкой по взрывозащите <span id="spanEngineMarking"></span>:</h3>
             <div id="divCheckEngine"></div>
             <h3>Магнитный пускатель с маркировкой по взрывозащите <span id="spanStarterMarking"></span>:</h3>
             <div id="divCheckStarter"></div>
         </div>
         <div id="divFrameCheckLamp" hidden>
-            <div class="w3-container w3-round w3-margin-top w3-teal w3-center"><h2>Проверка соответствия стационарных светильников, установленных в навесе над ТРК, классу зоны, категории и группе взрывоопасной смеси</h2></div>
+            <div class="w3-container w3-round w3-margin-top w3-teal w3-center">
+                <h2>Проверка соответствия стационарных светильников, установленных в навесе над ТРК, классу зоны, категории и группе взрывоопасной смеси</h2>
+            </div>
             <h3>Стационарный светильник с маркировкой по взрывозащите <span id="spanLampMarking"></span>:</h3>
             <div id="divCheckLamp"></div>
         </div>
         <div id="divFrameCheckCabel" hidden>
-            <div class="w3-container w3-round w3-margin-top w3-teal w3-center"><h2>Проверка соответствия кабелей силовой сети классу зоны</h2></div>
+            <div class="w3-container w3-round w3-margin-top w3-teal w3-center">
+                <h2>Проверка соответствия кабелей силовой сети классу зоны</h2>
+            </div>
             <h3>Кабель питания ТРК марки <span id="spanCabelMarking"></span> (проложен в трубе):</h3>
             <table class="w3-table w3-bordered">
                 <tbody>
                     <tr>
-                        <td>Жилы</td><td><span id="spanCabelThreadTask"></span></td><td><span id="spanCabelThreadCheckTask"></span></td>
+                        <td>Жилы</td>
+                        <td><span id="spanCabelThreadTask"></span></td>
+                        <td><span id="spanCabelThreadCheckTask"></span></td>
                     </tr>
                     <tr>
-                        <td>Изоляция</td><td><span id="spanCabelIsolateTask"></span></td><td><span id="spanCabelIsolateCheckTask"></span></td>
+                        <td>Изоляция</td>
+                        <td><span id="spanCabelIsolateTask"></span></td>
+                        <td><span id="spanCabelIsolateCheckTask"></span></td>
                     </tr>
                     <tr>
-                        <td>Оболочка</td><td><span id="spanCabelCoverTask"></span></td><td><span id="spanCabelCoverCheckTask"></span></td>
+                        <td>Оболочка</td>
+                        <td><span id="spanCabelCoverTask"></span></td>
+                        <td><span id="spanCabelCoverCheckTask"></span></td>
                     </tr>
                     <tr>
-                        <td>Броня</td><td><span id="spanCabelBronTask"></span></td><td><span id="spanCabelBronCheckTask"></span></td>
+                        <td>Броня</td>
+                        <td><span id="spanCabelBronTask"></span></td>
+                        <td><span id="spanCabelBronCheckTask"></span></td>
                     </tr>
                     <tr id="divCabelUnderBronTask" hidden>
-                        <td>Подушка под броней</td><td><span id="spanCabelUnderBronTask"></span></td><td></td>
+                        <td>Подушка под броней</td>
+                        <td><span id="spanCabelUnderBronTask"></span></td>
+                        <td></td>
                     </tr>
                     <tr id="divCabelOuterCoverTask" hidden>
-                        <td>Наружный покров</td><td><span id="spanCabelOuterCoverTask"></span></td><td><span id="spanCabelOuterCoverCheckTask"></span></td>
+                        <td>Наружный покров</td>
+                        <td><span id="spanCabelOuterCoverTask"></span></td>
+                        <td><span id="spanCabelOuterCoverCheckTask"></span></td>
                     </tr>
                 </tbody>
             </table>
         </div>
         <div id="divFrameCheckWire" hidden>
-            <div class="w3-container w3-round w3-margin-top w3-teal w3-center"><h2>Проверка соответствия проводов осветительной сети классу зоны</h2></div>
+            <div class="w3-container w3-round w3-margin-top w3-teal w3-center">
+                <h2>Проверка соответствия проводов осветительной сети классу зоны</h2>
+            </div>
             <h3>Провод питания освещения ТРК марки <span id="spanWireMarking"></span>:</h3>
             <table class="w3-table w3-bordered">
                 <tbody>
                     <tr>
-                        <td>Жилы</td><td><span id="spanWireThreadTask"></span></td><td><span id="spanWireThreadCheckTask"></span></td>
+                        <td>Жилы</td>
+                        <td><span id="spanWireThreadTask"></span></td>
+                        <td><span id="spanWireThreadCheckTask"></span></td>
                     </tr>
                     <tr>
-                        <td>Изоляция</td><td><span id="spanWireIsolateTask"></span></td><td><span id="spanWireIsolateCheckTask"></span></td>
+                        <td>Изоляция</td>
+                        <td><span id="spanWireIsolateTask"></span></td>
+                        <td><span id="spanWireIsolateCheckTask"></span></td>
                     </tr>
                     <tr>
-                        <td>Особенности</td><td><span id="spanWireFeatureTask"></span></td><td><span id="spanWireFeatureCheckTask"></span></td>
+                        <td>Особенности</td>
+                        <td><span id="spanWireFeatureTask"></span></td>
+                        <td><span id="spanWireFeatureCheckTask"></span></td>
                     </tr>
                     <tr>
-                        <td>Способ прокладки</td><td><span id="spanWireLaying"></span></td><td><span id="spanWireLayingCheckTask"></span></td>
+                        <td>Способ прокладки</td>
+                        <td><span id="spanWireLaying"></span></td>
+                        <td><span id="spanWireLayingCheckTask"></span></td>
                     </tr>
                 </tbody>
             </table>
         </div>
         <div id="divResult" hidden>
-            <div class="w3-container w3-round w3-margin-top w3-teal w3-center"><h2>Результат</h2></div>
+            <div class="w3-container w3-round w3-margin-top w3-teal w3-center">
+                <h2>Результат</h2>
+            </div>
             <h3 id="resultUserName"></h3>
             <h3 id="resultUserGroup"></h3>
             <h3 id="resultPercent"></h3>
         </div>
         <hr>
-        <button id='btnPrev' class='w3-button w3-round w3-border' onclick="btnPrevClick()">Назад</button>
-        <button id='btnNext' class='w3-button w3-round w3-teal' onclick="btnNextClick()">Далее</button>
+        <div id="navButtons" hidden>
+            <button id='btnPrev' class='w3-button w3-round w3-border' onclick="btnPrevClick()">Назад</button>
+            <button id='btnNext' class='w3-button w3-round w3-teal' onclick="btnNextClick()">Далее</button>
+        </div>
     </div>
     <footer class="w3-container w3-margin-top w3-padding w3-blue-grey w3-bar w3-small">
-        <a class="w3-bar-item w3-hover-blue" target="_blank" href="https://www.consultant.ru/cons/cgi/online.cgi?req=doc&base=LAW&n=422166&dst=1000000001">ФЗ №123</a>       
+        <a class="w3-bar-item w3-hover-blue" target="_blank" href="https://www.consultant.ru/cons/cgi/online.cgi?req=doc&base=LAW&n=422166&dst=1000000001">ФЗ №123</a>
         <a class="w3-bar-item w3-hover-blue" target="_blank" href="https://www.elec.ru/library/direction/pue.html">ПУЭ</a>
         <a class="w3-bar-item w3-hover-blue" target="_blank" href="https://meganorm.ru/Data2/1/4294846/4294846921.pdf">ГОСТ Р 51330.9-99. Часть 10</a>
         <a class="w3-bar-item w3-hover-blue" target="_blank" href="https://meganorm.ru/Data2/1/4294847/4294847031.pdf">Часть 12</a>
