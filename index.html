@@ -52,31 +52,29 @@
             <div class="w3-container w3-round w3-margin-top w3-teal w3-center">
                 <h2>Регистрация</h2>
             </div>
-            <div>
-                <div class="w3-cell w3-cell-middle">
-                    <img id="imgUserName" src="img/pict1.jpg" />
+            <div class="w3-cell w3-cell-middle">
+                <img id="imgUserName" src="img/pict1.jpg" />
+            </div>
+            <div class="w3-cell w3-cell-middle">
+                <div class="w3-container w3-padding">
+                    <div>Введите фимилию и инициалы</div>
+                    <input id='tbUserName' type='text' class='form-control w3-input w3-border' placeholder='ФИО'>
                 </div>
-                <div class="w3-cell w3-cell-middle">
-                    <div class="w3-container w3-padding">
-                        <div>Введите фимилию и инициалы</div>
-                        <input id='tbUserName' type='text' class='form-control w3-input w3-border' placeholder='ФИО'>
-                    </div>
-                    <div class="w3-container w3-padding">
-                        <div>Номер группы</div>
-                        <select id='selectGroup' class="w3-select">
-                            <option value="none" selected disabled hidden>выберите группу...</option>
-                            <option>ПБ-031</option>
-                            <option>ПБ-032</option>
-                            <option>ПБв-031</option>
-                            <option>ТБ-033</option>
-                            <option>ТБ-034</option>
-                            <option>ТБ-035</option>
-                            <option>ТБ-036</option>
-                            <option>ТБ-037</option>
-                            <option>ТБв-031</option>
-                            <option>Группа ФЗОППК</option>
-                        </select>
-                    </div>
+                <div class="w3-container w3-padding">
+                    <div>Номер группы</div>
+                    <select id='selectGroup' class="w3-select">
+                        <option value="none" selected disabled hidden>выберите группу...</option>
+                        <option>ПБ-031</option>
+                        <option>ПБ-032</option>
+                        <option>ПБв-031</option>
+                        <option>ТБ-033</option>
+                        <option>ТБ-034</option>
+                        <option>ТБ-035</option>
+                        <option>ТБ-036</option>
+                        <option>ТБ-037</option>
+                        <option>ТБв-031</option>
+                        <option>Группа ФЗОППК</option>
+                    </select>
                 </div>
             </div>
         </div>
@@ -92,9 +90,9 @@
         </div>
         <div id="divAboutFuel" hidden>
             <div class="w3-container w3-round w3-margin-top w3-teal w3-center">
-                <h2>Определите категорию и группу взрывоопасной смеси видов топлива, обращающихся в технологическом процессе АЗС</h2>
+                <h2>Определите категорию и группу взрывоопасной смеси видов топлива</h2>
             </div>
-            <h3>Пожароопасные свойства веществ</h3>
+            <h3>Пожароопасные свойства веществ, обращающихся в технологическом процессе АЗС</h3>
             <table id="tableFuels" class="w3-table w3-bordered w3-border">
                 <head>
                     <tr>
@@ -112,16 +110,21 @@
                 </head>
             </table>
         </div>
-        <div id="divFrameClassZone" class="w3-large" hidden>
+        <div id="divFrameClassZone" class="w3-xlarge">
             <div class="w3-container w3-round w3-margin-top w3-teal w3-center">
                 <h2>Нормативная оценка класса зоны АЗС</h2>
             </div>
-            <div class="w3-container w3-margin-top">
-                <div>Выберите, по какому нормативному документу следует проводить оценку класса зоны АЗС:</div>
-                <div id="divClassZoneDocument"></div>
+            <div class="w3-cell w3-cell-middle">
+                <img id="imgClassZone" src="img/pict1.jpg" />
             </div>
-            <div class="w3-container w3-margin-top">
-                <div>Территория АЗС относится к зоне: <span id="divClassZone"></span></div>
+            <div class="w3-cell w3-cell-middle">                
+                <div class="w3-container w3-padding-16">
+                    <div>Выберите, по какому нормативному документу следует проводить оценку класса зоны АЗС:</div>
+                    <div id="divClassZoneDocument"></div>
+                </div>
+                <div class="w3-container w3-padding-16">
+                    <div>Территория АЗС относится к зоне: <span id="divClassZone"></span></div>
+                </div>
             </div>
         </div>
         <div id="divFrameCheckEngineAndStarter" hidden>

@@ -7,7 +7,7 @@ window.onload = () => {
 };
 
 window.onresize = () => {
-    let imgIds = ["imgIntro", "imgUserName"];
+    let imgIds = ["imgIntro", "imgUserName", "imgClassZone"];
     let images = imgIds.map((item) => {
         return document.getElementById(item);
     })
