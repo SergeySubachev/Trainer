@@ -86,6 +86,7 @@ class ManyInManyTest extends Task {
             checkbox.classList.add("w3-check");
             label.appendChild(checkbox);
             let span = document.createElement("span");
+            span.style.marginLeft = "5px";
             span.innerText = option;
             label.appendChild(span);
         }
