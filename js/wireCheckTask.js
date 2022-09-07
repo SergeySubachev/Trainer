@@ -47,9 +47,9 @@ class Wire {
 const WIRES = [
     new Wire("ПВ", WireThread_М, WireIsolate_В, WireFeature_н),
     new Wire("ПВ-1", WireThread_М, WireIsolate_В, WireFeature_н),
-    new Wire("ПВ-2", WireThread_М, WireIsolate_В),
-    new Wire("ПВ-3", WireThread_М, WireIsolate_В),
-    new Wire("ПВ-4", WireThread_М, WireIsolate_В),
+    new Wire("ПВ-2", WireThread_М, WireIsolate_В, WireFeature_2),
+    new Wire("ПВ-3", WireThread_М, WireIsolate_В, WireFeature_3),
+    new Wire("ПВ-4", WireThread_М, WireIsolate_В, WireFeature_4),
     new Wire("АПВ", WireThread_А, WireIsolate_В, WireFeature_н),
     new Wire("ПП", WireThread_М, WireIsolate_П, WireFeature_н),
     new Wire("АПП", WireThread_А, WireIsolate_П, WireFeature_н),

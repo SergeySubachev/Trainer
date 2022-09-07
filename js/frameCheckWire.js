@@ -7,7 +7,7 @@ class FrameCheckWire extends Frame {
 
         let laying = GetRandom([WireLaying1, WireLaying2, WireLaying3]);
         document.getElementById("spanWireLaying").innerText = laying;
-
+       
         this.Tasks = [
             new WireThreadTask("spanWireThreadTask", wire.Thread.Description),
             new WireIsolateTask("spanWireIsolateTask", wire.Isolate.Description),
