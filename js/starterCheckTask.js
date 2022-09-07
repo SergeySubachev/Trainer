@@ -41,6 +41,8 @@ class StarterCheckTask extends DeviceCheckTask {
 
     Init() {
         super.Init();
-        document.getElementById("spanStarterMarking").innerText = `${this.DeviceLevel.Name}Ex${this.DeviceProtectionType}${this.DeviceGroup.Name}${this.DeviceTempClass.Name}`;
+        let marks = `${this.DeviceLevel.Name}Ex${this.DeviceProtectionType}${this.DeviceGroup.Name}${this.DeviceTempClass.Name}`;
+        document.getElementById("divImageStarterMarking").innerText = marks;
+        document.getElementById("spanStarterMarking").innerText = marks;
     }
 }

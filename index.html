@@ -110,7 +110,7 @@
                 </head>
             </table>
         </div>
-        <div id="divFrameClassZone" class="w3-xlarge">
+        <div id="divFrameClassZone" class="w3-xlarge" hidden>
             <div class="w3-container w3-round w3-margin-top w3-teal w3-center">
                 <h2>Нормативная оценка класса зоны АЗС</h2>
             </div>
@@ -131,10 +131,21 @@
             <div class="w3-container w3-round w3-margin-top w3-teal w3-center">
                 <h2>Проверка соответствия электродвигателя и магнитного пускателя, установленного на ТРК, классу зоны, категории и группе взрывоопасной смеси</h2>
             </div>
-            <h3>Двигатель насоса ТРК с маркировкой по взрывозащите <span id="spanEngineMarking"></span>:</h3>
-            <div id="divCheckEngine"></div>
-            <h3>Магнитный пускатель с маркировкой по взрывозащите <span id="spanStarterMarking"></span>:</h3>
-            <div id="divCheckStarter"></div>
+            <div id="divImageEngine" class="w3-cell w3-cell-middle w3-display-container">
+                <img id="imgCheckEngine" src="img/engine.jpg" />
+                <div id="divImageEngineMarking" class="w3-display-position w3-xlarge w3-card-4 w3-pale-yellow w3-padding w3-round" style="top:45%;left:60%">1ExdIICT5</div>
+                <div id="divImageStarterMarking" class="w3-display-position w3-xlarge w3-card-4 w3-pale-yellow w3-padding w3-round" style="top:70%;left:35%">1ExdIICT5</div>
+            </div>
+            <div class="w3-cell w3-cell-middle">
+                <div class="w3-container w3-padding-16">
+                    <h3>Двигатель насоса ТРК с маркировкой по взрывозащите <span id="spanEngineMarking"></span>:</h3>
+                    <div id="divCheckEngine"></div>
+                </div>
+                <div class="w3-container w3-padding-16">
+                    <h3>Магнитный пускатель с маркировкой по взрывозащите <span id="spanStarterMarking"></span>:</h3>
+                    <div id="divCheckStarter"></div>
+                </div>
+            </div>
         </div>
         <div id="divFrameCheckLamp" hidden>
             <div class="w3-container w3-round w3-margin-top w3-teal w3-center">

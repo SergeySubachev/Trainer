@@ -41,6 +41,8 @@ class EngineCheckTask extends DeviceCheckTask {
 
     Init() {
         super.Init();
-        document.getElementById("spanEngineMarking").innerText = `${this.DeviceLevel.Name}Ex${this.DeviceProtectionType}${this.DeviceGroup.Name}${this.DeviceTempClass.Name}`;
+        let marks = `${this.DeviceLevel.Name}Ex${this.DeviceProtectionType}${this.DeviceGroup.Name}${this.DeviceTempClass.Name}`;
+        document.getElementById("divImageEngineMarking").innerText = marks;
+        document.getElementById("spanEngineMarking").innerText = marks;
     }
 }
