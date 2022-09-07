@@ -20,9 +20,22 @@ window.onload = () => {
         frames[i].Init();
     }
 
+    onresize();
+
     currentFrame = frames[0];
     currentFrame.Show();
 };
+
+window.onresize = () => {
+    let width = window.innerWidth;
+    if (width > 1000) {
+        let img = document.getElementById("imgPict1");
+        img.width = Math.round(width / 3);
+        img.hidden = false;
+    } else {
+        document.getElementById("imgPict1").hidden = true;
+    }
+}
 
 function btnNextClick() {
     if (currentFrame.IsComplete() && currentFrame.NextFrame != null) {
