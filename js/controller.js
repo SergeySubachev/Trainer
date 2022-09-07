@@ -7,8 +7,8 @@ window.onload = () => {
 };
 
 window.onresize = () => {
-    let imgIds = ["imgIntro", "imgUserName", "imgClassZone", "imgCheckEngine"];
-    let imgWidthRates = [0.3, 0.4, 0.3, 0.4];
+    let imgIds = ["imgIntro", "imgUserName", "imgClassZone", "imgCheckEngine", "imgCheckLamp"];
+    let imgWidthRates = [0.3, 0.4, 0.3, 0.4, 0.5];
     let images = imgIds.map((item) => {
         return document.getElementById(item);
     })
@@ -18,7 +18,7 @@ window.onresize = () => {
         images[i].width = Math.round(windowWidth * imgWidthRates[i]);
     }
 
-    let divIds = ["imgIntro", "imgUserName", "imgClassZone", "divImageEngine"];
+    let divIds = ["imgIntro", "imgUserName", "imgClassZone", "divImageEngine", "divImageLamp"];
     divIds.forEach(divId => {
         if (windowWidth < 1000) document.getElementById(divId).classList.add("w3-hide");
         else document.getElementById(divId).classList.remove("w3-hide");

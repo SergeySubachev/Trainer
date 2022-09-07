@@ -41,6 +41,8 @@ class LampCheckTask extends DeviceCheckTask {
 
     Init() {
         super.Init();
-        document.getElementById("spanLampMarking").innerText = `${this.DeviceLevel.Name}Ex${this.DeviceProtectionType}${this.DeviceGroup.Name}${this.DeviceTempClass.Name}`;
+        let marks = `${this.DeviceLevel.Name}Ex${this.DeviceProtectionType}${this.DeviceGroup.Name}${this.DeviceTempClass.Name}`;
+        document.getElementById("divImageLampMarking").innerText = marks;
+        document.getElementById("spanLampMarking").innerText = marks;
     }
 }
