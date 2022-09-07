@@ -44,3 +44,11 @@ function btnNextClick() {
         currentFrame.Show();
     }
 }
+
+function btnPrevClick() {
+    if (currentFrame.PrevFrame != null) {
+        currentFrame.Hide();
+        currentFrame = currentFrame.PrevFrame;
+        currentFrame.Show();
+    }
+}
