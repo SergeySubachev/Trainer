@@ -6,7 +6,7 @@ window.onload = () => {
     onresize();
 };
 
-window.onresize = () => {
+window.onresize = () => {    
     let imgIds = ["imgIntro", "imgUserName", "imgClassZone", "imgCheckEngine", "imgCheckLamp"];
     let imgWidthRates = [0.3, 0.4, 0.3, 0.4, 0.5];
     let images = imgIds.map((item) => {
@@ -14,6 +14,7 @@ window.onresize = () => {
     })
 
     let windowWidth = window.innerWidth;
+    alert("Window width = " + windowWidth);
     for (let i = 0; i < images.length; i++) {
         images[i].width = Math.round(windowWidth * imgWidthRates[i]);
     }
