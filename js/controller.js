@@ -14,14 +14,14 @@ window.onresize = () => {
     })
 
     let windowWidth = window.innerWidth;
-    alert("Window width = " + windowWidth);
+    let windowHeight = window.innerHeight;
     for (let i = 0; i < images.length; i++) {
         images[i].width = Math.round(windowWidth * imgWidthRates[i]);
     }
 
     let divIds = ["imgIntro", "imgUserName", "imgClassZone", "divImageEngine", "divImageLamp"];
     divIds.forEach(divId => {
-        if (windowWidth < 800) document.getElementById(divId).classList.add("w3-hide");
+        if (windowWidth < windowHeight) document.getElementById(divId).classList.add("w3-hide");
         else document.getElementById(divId).classList.remove("w3-hide");
     });
 }
