@@ -36,5 +36,6 @@ class Fuel {
 const gazoline80 = new Fuel("Бензин АИ-80", -37, 320, 0.78, 5.6, SUBSTANCE_IIA, SUBSTANCE_T3);
 const gazoline92 = new Fuel("Бензин АИ-92", -36, 370, 0.98, 5.5, SUBSTANCE_IIA, SUBSTANCE_T3);
 const gazoline95 = new Fuel("Бензин АИ-95", -39, 375, 1.1, 6.14, SUBSTANCE_IIA, SUBSTANCE_T3);
+const gazoline98 = new Fuel("Бензин АИ-98", -39, 375, 1.1, 6.14, SUBSTANCE_IIA, SUBSTANCE_T3);
 const dieselSummer = new Fuel("Дизельное топливо 'Л'", 40, 210, 0.52, 6.2, SUBSTANCE_IIB, SUBSTANCE_T3);
 const dieselWinter = new Fuel("Дизельное топливо 'З'", 35, 225, 0.61, 6.2, SUBSTANCE_IIB, SUBSTANCE_T3);
