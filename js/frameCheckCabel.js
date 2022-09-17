@@ -41,11 +41,6 @@ class FrameCheckCabel extends Frame {
             sOuterCover = cabelOuterCoverTask.CorrectOptionObject.Marks;
             document.getElementById("divCabelOuterCoverTask").hidden = false;
             this.Tasks.push(cabelOuterCoverTask);
-
-            //проложен в трубе - поэтому:
-            let outerCoverSatisfy = isSatisfy;
-            let сabelOuterCoverCheckTask = new CabelPartCheckTask("spanCabelOuterCoverCheckTask", outerCoverSatisfy);
-            this.Tasks.push(сabelOuterCoverCheckTask);
         }
 
         let marking = "";
