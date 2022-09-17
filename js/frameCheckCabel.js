@@ -16,6 +16,18 @@ class FrameCheckCabel extends Frame {
 
         this.Tasks = [cabelThreadTask, cabelIsolateTask, cabelCoverTask, cabelBronTask];
 
+        if (sBron != "") {
+            let cabelUnderBronTask = new CabelUnderBronTask("spanCabelUnderBronTask");
+            sUnderBron = cabelUnderBronTask.CorrectOptionObject.Marks;
+            document.getElementById("divCabelUnderBronTask").hidden = false;
+            this.Tasks.push(cabelUnderBronTask);
+
+            let cabelOuterCoverTask = new CabelOuterCoverTask("spanCabelOuterCoverTask");
+            sOuterCover = cabelOuterCoverTask.CorrectOptionObject.Marks;
+            document.getElementById("divCabelOuterCoverTask").hidden = false;
+            this.Tasks.push(cabelOuterCoverTask);
+        }
+
         //проверка       
         let isSatisfy = "соответствует";
         let isNotSatisfy = "не соответствует";
@@ -30,18 +42,6 @@ class FrameCheckCabel extends Frame {
         let coverSatisfy = cabelCoverTask.CorrectOptionObject == Cover_П ? isNotSatisfy : isSatisfy;
         let cabelCoverCheckTask = new CabelPartCheckTask("spanCabelCoverCheckTask", coverSatisfy);
         this.Tasks.push(cabelCoverCheckTask);
-
-        if (sBron != "") {
-            let cabelUnderBronTask = new CabelUnderBronTask("spanCabelUnderBronTask");
-            sUnderBron = cabelUnderBronTask.CorrectOptionObject.Marks;
-            document.getElementById("divCabelUnderBronTask").hidden = false;
-            this.Tasks.push(cabelUnderBronTask);
-
-            let cabelOuterCoverTask = new CabelOuterCoverTask("spanCabelOuterCoverTask");
-            sOuterCover = cabelOuterCoverTask.CorrectOptionObject.Marks;
-            document.getElementById("divCabelOuterCoverTask").hidden = false;
-            this.Tasks.push(cabelOuterCoverTask);
-        }
 
         let marking = "";
         if (sIsolate == "Ц") marking = sIsolate + sThread + sCover + sBron + sUnderBron + sOuterCover;
