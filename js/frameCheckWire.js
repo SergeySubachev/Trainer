@@ -2,10 +2,15 @@ class FrameCheckWire extends Frame {
     Tasks = [];
 
     Init() {
+        //провод
         let wire = GetRandom(WIRES);
         document.getElementById("spanWireMarking").innerText = wire.Marks;
 
-        let laying = GetRandom([WireLaying1, WireLaying2, WireLaying3]);
+        //способ прокладки. Если с горючим наружным покровом - выбираем "в трубе"
+        let burning = [WireFeature_ТО, WireFeature_Д, WireFeature_Cover_П];
+        let laying = burning.includes(wire.Feature)
+            ? WireLayingTube 
+            : GetRandom([WireLayingStaples, WireLayingHawser, WireLayingTube]);
         document.getElementById("spanWireLaying").innerText = laying;
        
         this.Tasks = [
@@ -14,6 +19,7 @@ class FrameCheckWire extends Frame {
             new WireFeatureTask("spanWireFeatureTask", wire.Feature.Description),
         ];
 
+        //проверка соответствия
         let isSatisfy = "соответствует";
         let isNotSatisfy = "не соответствует";
 
@@ -24,11 +30,12 @@ class FrameCheckWire extends Frame {
         this.Tasks.push(new WirePartCheckTask("spanWireIsolateCheckTask", isolateSatisfy));
 
         //проложенные открыто не должны иметь горючий наружный покров
-        let burnable = [WireFeature_ТО, WireFeature_Д, WireFeature_Cover_П];
-        let featureSatisfy = laying != WireLaying3 && burnable.includes(wire.Feature) ? isNotSatisfy : isSatisfy;
+        //но у нас если горючий, то в трубе, поэтому всегда соответствует
+        let featureSatisfy = isSatisfy;
         this.Tasks.push(new WirePartCheckTask("spanWireFeatureCheckTask", featureSatisfy));
 
-        let layingSatisfy = laying != WireLaying3 ? isNotSatisfy : isSatisfy;
+        //проверка способа прокладки        
+        let layingSatisfy = laying != WireLayingTube ? isNotSatisfy : isSatisfy;
         this.Tasks.push(new WirePartCheckTask("spanWireLayingCheckTask", layingSatisfy));
 
         for (const task of this.Tasks) {

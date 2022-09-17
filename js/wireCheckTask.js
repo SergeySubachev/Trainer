@@ -136,9 +136,9 @@ class WireFeatureTask extends OneInManyTest {
     }
 }
 
-const WireLaying1 = "на скобах";
-const WireLaying2 = "на тросах";
-const WireLaying3 = "в трубе";
+const WireLayingStaples = "на скобах";
+const WireLayingHawser = "на тросах";
+const WireLayingTube = "в трубе";
 
 class WirePartCheckTask extends OneInManyTest {
     constructor(containerId, correctOption) {
