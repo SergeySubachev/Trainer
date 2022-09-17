@@ -27,4 +27,10 @@ class FrameClassZone extends Frame {
         }
         return true;
     }
+
+    GetResult(result = []) {
+        const count = this.Tasks.length;
+        const sum = this.Tasks.reduce((partialSum, a) => partialSum + a.GetResult(), 0);
+        result.push(new ResultBlock("Определение класса зоны", sum / count));
+    }
 }

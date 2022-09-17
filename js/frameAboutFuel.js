@@ -57,4 +57,17 @@ class FrameAboutFuel extends Frame {
         }
         return true;
     }
+
+    GetResult(result = []) {
+        let fuelsCount = this.Fuels.length;
+        let categoriesScore = 0;
+        let groupsScore = 0;
+        for (let i = 0; i < fuelsCount; i++) {
+            categoriesScore += this.Tasks[i * 2].GetResult();
+            groupsScore += this.Tasks[i * 2 + 1].GetResult();
+        }
+
+        result.push(new ResultBlock("Определение категории взрывоопасной смеси", categoriesScore / fuelsCount));
+        result.push(new ResultBlock("Определение группы взрывоопасной смеси", groupsScore / fuelsCount));
+    }
 }

@@ -7,17 +7,26 @@ class FrameResult extends Frame {
         document.getElementById("resultUserName").innerText = frame.UserName;
         document.getElementById("resultUserGroup").innerText = frame.Group;
 
-        let allScore = 0;
-        let userScore = 0;
+        let result = [];
         while (frame != null) {
             if (frame.hasOwnProperty("Tasks")) {
-                for (const task of frame.Tasks) {
-                    allScore++;
-                    userScore += task.GetResult();
-                }
+                frame.GetResult(result);
             }
             frame = frame.NextFrame;
         }
+
+        let allScore = result.length;
+        let userScore = 0;
+        
+        let divDetails = document.getElementById("resultDetails");
+        divDetails.innerHTML = "";
+        for (const res of result) {
+            userScore += res.Score;
+            let p = document.createElement("p");
+            p.innerText = `${res.Caption}: ${Math.round(res.Score * 100)}%.`;
+            divDetails.appendChild(p);
+        }
+
         let percent = Math.round(userScore / allScore * 100);
         document.getElementById("resultPercent").innerText = `Результат: ${userScore} из ${allScore} (${percent}%)`;
 
