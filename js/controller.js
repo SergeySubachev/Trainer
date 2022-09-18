@@ -21,7 +21,7 @@ window.onresize = () => {
 
     let divIds = ["imgIntro", "imgUserName", "imgClassZone", "divImageEngine", "divImageLamp"];
     divIds.forEach(divId => {
-        if (windowWidth < windowHeight) document.getElementById(divId).classList.add("w3-hide");
+        if (windowWidth < 0.8 * windowHeight) document.getElementById(divId).classList.add("w3-hide");
         else document.getElementById(divId).classList.remove("w3-hide");
     });
 }
