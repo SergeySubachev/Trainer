@@ -1,5 +1,19 @@
 class FrameResult extends Frame {
     Show() {
+        const divResults = document.getElementById("divResults");
+        const divRepeat = document.getElementById("divRepeat");
+        const isControlMode = document.getElementById("radioControlMode").checked;
+        divResults.hidden = !isControlMode;
+        divRepeat.hidden = isControlMode;
+
+        if (isControlMode) {
+            this.FillResultDetails();
+        }
+
+        super.Show();
+    }
+
+    FillResultDetails() {
         let frame = this.PrevFrame;
         while (!frame.hasOwnProperty("UserName")) {
             frame = frame.PrevFrame;
@@ -30,7 +44,5 @@ class FrameResult extends Frame {
 
         let percent = Math.round(userScore / allScore * 100);
         document.getElementById("resultPercent").innerText = `Результат: ${Math.round(userScore * 100) / 100} из ${allScore} (${percent}%)`;
-
-        super.Show();
     }
 }

@@ -45,7 +45,18 @@
                 </div>
                 <div class="w3-cell w3-cell-middle">
                     <p>Программа «<strong>Проверка соответствия электрооборудования автозаправочной станции требованиям пожарной безопасности</strong>» предназначена для моделирования экспертной, надзорной и инспекторско-аудиторской деятельности сотрудника Государственной противопожарной службы МЧС России по проверке соответствия производственного объекта требованиям пожарной безопасности, в качестве которого принята автозаправочная станция (АЗС).</p>
-                    <p>Цель работы с программой – закрепление теоретических знаний и практических умений по анализу пожарной опасности оборудования, установленного на АЗС, проведению оценки соответствия требованиям нормативных документов в области пожарной безопасности.</p>
+                    <p>Цель работы с программой – закрепление теоретических знаний и практических умений по анализу пожарной опасности
+                        оборудования, установленного на АЗС, проведению оценки соответствия требованиям нормативных документов в области
+                        пожарной безопасности.</p>
+                    <p style="margin: 0; padding: 0;"><u>Выбрать режим:</u></p>
+                    <p style="margin: 0; padding: 0;">
+                        <input id="radioTrainerMode" class="w3-radio" type="radio" name="mode" value="trainerMode" checked>
+                        <label>обучающий</label>
+                    </p>
+                    <p style="margin: 0; padding: 0;">
+                        <input id="radioControlMode" class="w3-radio" type="radio" name="mode" value="controlMode">
+                        <label>контролирующий</label>
+                    </p>
                 </div>
             </div>
         </div>
@@ -239,12 +250,19 @@
                 <h2>Результат</h2>
             </div>
             <div style="display: flex; justify-content: center;">
-                <div class="w3-card-4 w3-round w3-pale-yellow w3-margin-top w3-padding">
+                <div id="divResults" class="w3-card-4 w3-round w3-pale-yellow w3-margin-top w3-padding">
                     <div id="resultUserName" class="w3-xlarge">resultUserName</div>
                     <div id="resultUserGroup" class="w3-xlarge">resultUserGroup</div>
                     <div id="resultPercent" class="w3-xlarge">resultPercent</div>
                     <hr>
                     <div id="resultDetails">resultDetails</div>
+                </div>
+                <div id="divRepeat" class="w3-card-4 w3-round w3-pale-yellow w3-margin-top w3-padding">
+                    <div class="w3-xlarge" style="text-align: center;">
+                        <p>
+                            Вы завершили тренинг.
+                        </p>
+                        <button id='btnRepeat' class='w3-button w3-round w3-blue-gray' onclick="btnRepeatClick()">Повторить</button>
                 </div>
             </div>
         </div>

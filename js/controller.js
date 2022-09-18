@@ -58,6 +58,12 @@ function btnNextClick() {
     if (currentFrame.IsComplete() && currentFrame.NextFrame != null) {
         currentFrame.Hide();
         currentFrame = currentFrame.NextFrame;
+
+        const isTrainerMode = document.getElementById("radioTrainerMode").checked;
+        if (isTrainerMode && currentFrame.hasOwnProperty("UserName")) {
+            currentFrame = currentFrame.NextFrame;
+        }
+
         currentFrame.Show();
     }
 }
@@ -68,4 +74,10 @@ function btnPrevClick() {
         currentFrame = currentFrame.PrevFrame;
         currentFrame.Show();
     }
+}
+
+function btnRepeatClick() {
+    currentFrame.Hide();
+    currentFrame = frames[0];
+    currentFrame.Show();
 }
