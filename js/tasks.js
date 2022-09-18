@@ -57,8 +57,23 @@ class OneInManyTest extends Task {
     GetResult() {
         let container = document.getElementById(this.ContainerId);
         let selector = container.firstChild;
-        if (selector.value == this.CorrectOption) return 1;
-        return 0;
+
+        let result;
+        const isTrainerMode = document.getElementById("radioTrainerMode").checked;
+
+        if (selector.value == this.CorrectOption) {
+            result = 1;
+            if (isTrainerMode) {
+                selector.style.background = "MediumSeaGreen";
+            }
+        } else {
+            result = 0;
+            if (isTrainerMode) {
+                selector.style.background = "Tomato";
+            }
+        }
+
+        return result;
     }
 }
 
@@ -104,19 +119,33 @@ class ManyInManyTest extends Task {
             }
         }
 
+        let result = 1; //только если полное совпадение отмеченных и неотмеченных
+        const isTrainerMode = document.getElementById("radioTrainerMode").checked;
+
         //если что-то не отметили - 0
         for (const correctOption of this.CorrectOptions) {
-            if (answeredOptions.indexOf(correctOption) < 0)
-                return 0;
+            if (answeredOptions.indexOf(correctOption) < 0) {
+                result = 0;
+                break;
+            }
         }
 
         //если отметили что-то лишнее - 0
         for (const answeredOption of answeredOptions) {
-            if (this.CorrectOptions.indexOf(answeredOption) < 0)
-                return 0;
+            if (this.CorrectOptions.indexOf(answeredOption) < 0) {
+                result = 0;
+                break;
+            }
         }
 
-        //только если полное совпадение отмеченных и неотмеченных
-        return 1;
+        if (isTrainerMode) {
+            if (result == 1) {
+                container.style.background = "MediumSeaGreen";
+            } else {
+                container.style.background = "Tomato";
+            }
+        }
+
+        return result;
     }
 }

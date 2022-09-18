@@ -25,6 +25,16 @@ class FrameClassZone extends Frame {
         for (const task of this.Tasks) {
             if (!task.IsComplete()) return false;
         }
+
+        const isTrainerMode = document.getElementById("radioTrainerMode").checked;
+        if (isTrainerMode) {
+            for (const task of this.Tasks) {
+                if (task.GetResult() != 1) {
+                    return false;
+                }
+            }
+        }
+        
         return true;
     }
 

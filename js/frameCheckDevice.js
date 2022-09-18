@@ -29,6 +29,19 @@ class FrameCheckEngineAndStarter extends FrameCheckDevice {
         this.Tasks.push(task);
     }
 
+    IsComplete() {
+        const isTrainerMode = document.getElementById("radioTrainerMode").checked;
+        if (isTrainerMode) {
+            for (const task of this.Tasks) {
+                if (task.GetResult() != 1) {
+                    return false;
+                }
+            }
+        }
+        
+        return true;
+    }
+
     GetResult(result = []) {
         result.push(new ResultBlock("Проверка соответствия электродвигателя", this.Tasks[0].GetResult()));
         result.push(new ResultBlock("Проверка соответствия магнитного пускателя", this.Tasks[1].GetResult()));
@@ -42,6 +55,19 @@ class FrameCheckLamp extends FrameCheckDevice {
         let task = new LampCheckTask("divCheckLamp", this.MaxCategory, this.MaxGroup);
         task.Init();
         this.Tasks.push(task);
+    }
+
+    IsComplete() {
+        const isTrainerMode = document.getElementById("radioTrainerMode").checked;
+        if (isTrainerMode) {
+            for (const task of this.Tasks) {
+                if (task.GetResult() != 1) {
+                    return false;
+                }
+            }
+        }
+        
+        return true;
     }
     
     GetResult(result = []) {
