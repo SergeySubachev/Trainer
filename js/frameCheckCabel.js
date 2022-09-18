@@ -26,6 +26,9 @@ class FrameCheckCabel extends Frame {
             sOuterCover = cabelOuterCoverTask.CorrectOptionObject.Marks;
             document.getElementById("divCabelOuterCoverTask").hidden = false;
             this.Tasks.push(cabelOuterCoverTask);
+        } else {
+            document.getElementById("divCabelUnderBronTask").hidden = true;
+            document.getElementById("divCabelOuterCoverTask").hidden = true;
         }
 
         //проверка       

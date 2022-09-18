@@ -31,7 +31,8 @@ class FrameCheckWire extends Frame {
 
         //проложенные открыто не должны иметь горючий наружный покров
         //но у нас если горючий, то в трубе, поэтому всегда соответствует
-        let featureSatisfy = isSatisfy;
+        //не соответствует только если полиэтилен
+        let featureSatisfy = wire.Feature == WireFeature_Cover_П ? isNotSatisfy : isSatisfy;
         this.Tasks.push(new WirePartCheckTask("spanWireFeatureCheckTask", featureSatisfy));
 
         //проверка способа прокладки        

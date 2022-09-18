@@ -80,4 +80,5 @@ function btnRepeatClick() {
     currentFrame.Hide();
     currentFrame = frames[0];
     currentFrame.Show();
+    isInitialized = false;
 }

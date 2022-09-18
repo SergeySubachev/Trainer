@@ -30,6 +30,7 @@ class OneInManyTest extends Task {
 
     Init() {
         let container = document.getElementById(this.ContainerId);
+        container.innerHTML = "";
         let selector = document.createElement("select");
         container.appendChild(selector);
         let opt = document.createElement("option");
@@ -90,6 +91,8 @@ class ManyInManyTest extends Task {
 
     Init() {
         let container = document.getElementById(this.ContainerId);
+        container.innerHTML = "";
+        container.style.background = "initial";
         for (let option of this.Options) {
             let div = document.createElement("div");
             container.appendChild(div);
