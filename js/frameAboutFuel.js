@@ -3,8 +3,8 @@ class FrameAboutFuel extends Frame {
     Tasks = []; //категория и группа смеси
 
     Init() {
-        let tableFuels = document.getElementById("tableFuels");
-        tableFuels.innerHTML = "";
+        let tableFuelsBody = document.getElementById("tableFuelsBody");
+        tableFuelsBody.innerHTML = "";
         this.Fuels = [gazoline92, gazoline95, gazoline98, dieselSummer, dieselWinter];
         for (let fuel of this.Fuels) {
             let row = document.createElement("tr");
