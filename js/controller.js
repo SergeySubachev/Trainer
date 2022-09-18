@@ -19,9 +19,10 @@ window.onresize = () => {
         images[i].width = Math.round(windowWidth * imgWidthRates[i]);
     }
 
+    const isSmall = windowWidth < 600 || windowWidth < 0.8 * windowHeight;
     let divIds = ["imgIntro", "imgUserName", "imgClassZone", "divImageEngine", "divImageLamp"];
     divIds.forEach(divId => {
-        if (windowWidth < 0.8 * windowHeight) document.getElementById(divId).classList.add("w3-hide");
+        if (isSmall) document.getElementById(divId).classList.add("w3-hide");
         else document.getElementById(divId).classList.remove("w3-hide");
     });
 }
