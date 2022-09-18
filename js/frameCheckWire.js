@@ -49,4 +49,14 @@ class FrameCheckWire extends Frame {
         }
         return true;
     }
+
+    GetResult(result = []) {
+        //конструкция - 3 теста; проверка соответствия - последние 4
+        const wirePartsTests = this.Tasks.slice(0, -4);
+        const wireCheckTests = this.Tasks.slice(-4);
+        const wirePartsScore = wirePartsTests.reduce((partialSum, a) => partialSum + a.GetResult(), 0);
+        const wireCheckScore = wireCheckTests.reduce((partialSum, a) => partialSum + a.GetResult(), 0);
+        result.push(new ResultBlock("Расшифровка маркировки провода осветительной сети", wirePartsScore / wirePartsTests.length));
+        result.push(new ResultBlock("Проверка соответствия провода осветительной сети", wireCheckScore / wireCheckTests.length));
+    }
 }
