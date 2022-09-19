@@ -1,5 +1,4 @@
-﻿let isInitialized = false;
-let frames = [];
+﻿let frames = [];
 let currentFrame;
 
 window.onload = () => {
@@ -50,9 +49,8 @@ function Init() {
 }
 
 function btnNextClick() {
-    if (!isInitialized) {
+    if (currentFrame == frames[0]) {
         Init();
-        isInitialized = true;
     }
 
     if (currentFrame.IsComplete() && currentFrame.NextFrame != null) {
@@ -80,5 +78,4 @@ function btnRepeatClick() {
     currentFrame.Hide();
     currentFrame = frames[0];
     currentFrame.Show();
-    isInitialized = false;
 }

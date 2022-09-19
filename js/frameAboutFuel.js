@@ -8,7 +8,7 @@ class FrameAboutFuel extends Frame {
         this.Fuels = [gazoline92, gazoline95, gazoline98, dieselSummer, dieselWinter];
         for (let fuel of this.Fuels) {
             let row = document.createElement("tr");
-            tableFuels.appendChild(row);
+            tableFuelsBody.appendChild(row);
 
             let tdName = document.createElement("td");
             tdName.innerHTML = fuel.Name;
