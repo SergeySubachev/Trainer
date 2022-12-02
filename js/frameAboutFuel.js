@@ -19,6 +19,11 @@ class FrameAboutFuel extends Frame {
             tdTvsp.classList.add("w3-center");
             row.appendChild(tdTvsp);
 
+            let tdBemz = document.createElement("td");
+            tdBemz.innerHTML = fuel.Bemz;
+            tdBemz.classList.add("w3-center");
+            row.appendChild(tdBemz);
+
             let tdTsv = document.createElement("td");
             tdTsv.innerHTML = fuel.Tsv;
             tdTsv.classList.add("w3-center");
